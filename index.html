@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <title>CPC Linear Test Page for OneApp Experiences</title>
+
+    <!-- CPC Source Files -->
+    <script type="text/javascript" src="//dev-cloudpath.nbcuni.com/head/api/NBCUniCPC.js"></script>
+    <!-- Adobe Pass Library -->
+    <script type="text/javascript" src="//entitlement.auth.adobe.com/entitlement/AccessEnabler.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link href="css/app.css" rel="stylesheet">
+</head>
+
+<body class="d-flex flex-column h-100">
+    <header>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#">CloudPath OneApp Linear Example</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://dev-cloudpath.nbcuni.com/head/api/docs/public/index.html"
+                            target="_blank">CPC Documentation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                            href="http://dev-cloudpath.nbcuni.com/head/api/docs/public/tutorial-Entitlement%20using%20Full%20Page%20Level%20Authorization.html"
+                            target="_blank">CPC Auth Tutorial</a>
+                    </li>
+                </ul>
+                <select class="form-control mr-sm-3" id="mvpd-select">
+                    <option value="nothing">Select your provider</option>
+                    <option value="nothing">Waiting for list ...</option>
+                </select>
+                <button class="btn btn-outline-warning my-2 my-sm-0" type="submit" id="toggle-auth-btn">Login</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Begin page content -->
+    <main role="main" id="main-content">
+        <!-- Adobe Pass  -->
+        <div id="contentAccessEnabler" style="display: none;"></div>
+        <div id="mvpddiv" style="display:none">
+            <p>
+                <strong>No login window?</strong>
+                <br />
+                <a href="javascript:mvpdWindow.focus();">Click here to open it.</a>
+                <br />
+                Still not working? Check popup blockers!
+            </p>
+        </div>
+        <!-- End Adobe Pass -->
+        <div class="jumbotron">
+            <div class="container">
+                <h3 class="display-6" id="watching-header">Now Watching: CNBC</h3>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div id="playerContainer">
+                                <div id="videoplayer">
+                                    <div id="player-auth-overlay">
+                                        <div class="spinner-border" role="status">
+                                            <span class="sr-only">Loading...</span>
+                                        </div>
+                                        <h3>Please login to watch.</h3>
+                                        <h4>Awaiting authorization check.</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container cards-container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card mb-4 shadow-sm">
+                        <img class="card-img-top" src="images/bravo_tv.png" alt="Bravo">
+                        <div class="card-body">
+                            <button id="watch-bravo-west-btn" onclick="loadBravo(CALLSIGN_CONSTANTS.WEST);" type="button"
+                            class="btn btn-lg btn-block btn-primary btn-watch-now">Sign-in to Watch</button>
+                            <button id="watch-bravo-east-btn" onclick="loadBravo(CALLSIGN_CONSTANTS.EAST);" type="button"
+                            class="btn btn-lg btn-block btn-primary btn-watch-now">Sign-in to Watch</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card mb-4 shadow-sm">
+                        <img class="card-img-top" src="images/cnbc_logo.gif" alt="CNBC">
+                        <div class="card-body">
+                            <button id="watch-cnbc-btn" onclick="loadCNBC();" type="button"
+                                class="btn btn-lg btn-block btn-primary btn-watch-now">Sign-in to Watch</button>
+                            <button type="button" class="btn btn-lg btn-block btn-primary btn-watch-now btn-placeholder">Sign-in to Watch</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card mb-4 shadow-sm">
+                        <img class="card-img-top" src="images/e_new_logo_h.jpg" alt="E!">
+                        <div class="card-body">
+                            <button id="watch-e-btn" onclick="loadE();" type="button"
+                                class="btn btn-lg btn-block btn-primary btn-watch-now">Sign-in to Watch</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card mb-4 shadow-sm">
+                        <img class="card-img-top" src="images/MSNBC_logo.png" alt="MSNBC">
+                        <div class="card-body">
+                            <button id="watch-msnbc-btn" onclick="loadMSNBC();" type="button"
+                                class="btn btn-lg btn-block btn-primary btn-watch-now">Sign-in to Watch</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card mb-4 shadow-sm">
+                        <img class="card-img-top" src="images/nbc-logo.jpg" alt="NBC">
+                        <div class="card-body">
+                            <button id="watch-nbc-btn" onclick="loadNBC();" type="button"
+                                class="btn btn-lg btn-block btn-primary btn-watch-now">Sign-in to Watch</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card mb-4 shadow-sm">
+                        <img class="card-img-top" src="images/nbc-universo-logo.jpg" alt="Universo">
+                        <div class="card-body">
+                            <button id="watch-nbcuniverso-btn" onclick="loadUniverso();" type="button"
+                                class="btn btn-lg btn-block btn-primary btn-watch-now">Sign-in to Watch</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card mb-4 shadow-sm">
+                        <img class="card-img-top" src="images/oxygen-logo.jpg" alt="Oxygen">
+                        <div class="card-body">
+                            <button id="watch-oxygen-btn" onclick="loadOxygen();" type="button"
+                                class="btn btn-lg btn-block btn-primary btn-watch-now">Sign-in to Watch</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card mb-4 shadow-sm">
+                        <img class="card-img-top" src="images/syfy.jpg" alt="Syfy">
+                        <div class="card-body">
+                            <button id="watch-syfy-btn" onclick="loadSyfy();" type="button"
+                                class="btn btn-lg btn-block btn-primary btn-watch-now">Sign-in to Watch</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card mb-4 shadow-sm">
+                        <img class="card-img-top" src="images/USA_Network_logo.png" alt="USA">
+                        <div class="card-body">
+                            <button id="watch-usa-btn" onclick="loadUSA();" type="button"
+                                class="btn btn-lg btn-block btn-primary btn-watch-now">Sign-in to Watch</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
+
+    <footer class="footer fixed-bottom mt-auto py-3 adobe-pass-warning">
+        <div class="container">
+            <span class="text-muted" id="auth-status-footer">Adobe Pass: Checking entitlement status.</span>
+        </div>
+    </footer>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="js/app.js"></script>
+    <script src="js/channels.js"></script>
+    <script src="js/player.js"></script>
+</body>
+
+</html>

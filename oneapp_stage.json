@@ -1,0 +1,294 @@
+{
+    "environment": "stage",
+    "modules": [
+        {
+            "name": "NBC_STAGELIVEPlayer",
+            "class": "ANVATO_V3",
+            "specificConfig": {
+                "PlayerType": "ANVATO_V3",
+                "conviva": "{\"enabled\":true, \"CUSTOMER_KEY\":\"5236d0980748b4d4e0ea4dec01db0a78006ad447\", \"TOUCHSTONE_SERVICE_URL\":\"https://nbcu-central.testonly.conviva.com\", \"assetName\":\"[@@PROGRAM_ID@@] @@TITLE@@ @@EPISODE_TITLE@@\", \"streamUrl\":\"http://cp-nbclive-poc.akamai-hd.net/@@CALL_SIGN@@-station/master.m3u8\",\"applicationName\":\"Cloudpath Desktop Player\",\"defaultResource\":\"AKAMAI\", \"streamType\":\"LIVE\", \"product\":\"nbc.com\", \"viewerId\":\"[M_PARTICLE_ID]\", \"mParticleId\":\"[M_PARTICLE_ID]\", \"appVersion\":\"[PAGE_APP_VERSION]\", \"deviceId\":\"[IP_ADDRESS]\", \"brand\":\"NBC\", \"stitchType\":\"server\", \"stitchVendor\":\"Anvato\", \"streamProtocol\":\"HLS\", \"playerVendor\":\"Anvato\", \"playbackDevice\":\"Desktop\", \"appSessionId\":\"[APP_SESSION_ID]\", \"videoInitialized\":\"Start\"}",
+                "entitlement": "{\"authenticator\":\"adobePass\",\"authorizer\":\"adobePass\",\"requestor\":\"nbcentertainment\",\"resourceId\":\"nbc_linear\"}",
+                "authKillFeatureEnabled": true,
+                "authKillSettings": "{\"async\": true,\"crossDomain\": true,\"url\": \"https://ws-cloudpath.media.nbcuni.com/ws/services/geo/live/nbc\",\"type\":\"POST\",\"headers\": {\"authorization\": \"CONFIG-TOKEN key=\\\"cloudpath_nbcd_web\\\", type=\\\"cpc\\\"\",\"content-type\": \"application/json\",\"accept\": \"application/media.geo-v1+json\"},\"data\":\"{\\\"device\\\":\\\"web\\\",\\\"adobeMvpdId\\\":\\\"@MVPD_ID@\\\",\\\"serviceZip\\\":\\\"@MVPD_HOMEZIP@\\\",\\\"encryptedZip\\\":\\\"@MVPD_ENCRYPTED_HOMEZIP@\\\"}\"}",
+                "concurrencyInitializationSettings": "{\"timeout\":10000,\"async\":true,\"crossDomain\":true,\"url\":\"https://streams.adobeprimetime.com/v2/sessions/[MVPD]/[ENCODED_UPSTREAM_USER_ID]\",\"type\":\"POST\",\"headers\":{\"authorization\":\"Basic MzQzOWYyMDEtZjM0ZS00ZGQ3LWFiMzMtYTQwZjI3NDcyNjI4Og==\"},\"data\":\"epl=true\"}",
+                "concurrencyPollingSettings": "{\"timeout\":10000,\"async\":true,\"crossDomain\":true,\"url\":\"https://streams.adobeprimetime.com/v2/sessions/[MVPD]/[ENCODED_UPSTREAM_USER_ID]/[LOCATION]\",\"type\":\"POST\",\"headers\":{\"authorization\":\"Basic MzQzOWYyMDEtZjM0ZS00ZGQ3LWFiMzMtYTQwZjI3NDcyNjI4Og==\"},\"data\":\"epl=true\"}",
+                "concurrencyTerminationSettings": "{\"timeout\":10000,\"async\":true,\"crossDomain\":true,\"url\":\"https://streams.adobeprimetime.com/v2/sessions/[MVPD]/[ENCODED_UPSTREAM_USER_ID]/[LOCATION]\",\"type\":\"DELETE\",\"headers\":{\"authorization\":\"Basic MzQzOWYyMDEtZjM0ZS00ZGQ3LWFiMzMtYTQwZjI3NDcyNjI4Og==\"},\"data\":\"epl=true\"}",
+                "unsupportedDeviceURL": "//tve-staging-nbc.nbcuni.com/player/stage/UnsupportedDevice_New.html?guid=[VIDEO_ID]",
+                "anvload": "https://w3.cdn.anvato.net/player/stage/nbc/scripts/anvload.js",
+                "anvpdata": "{\"trackTimePeriod\":1, \"width\":\"100%\",\"height\":\"100%\",\"accessKey\":\"wyJvWbXGBSdbkEzhv0CW8meou82aqRy8\",\"video\":\"nbc\",\"recom\":0,\"clientSideAdTracking\":1,\"accessControl\":{\"mvpd\":\"[MVPD_ID]\"},\"plugins\":{\"heartbeat\":{\"marketingCloudId\":\"A8AB776A5245B4220A490D44@AdobeOrg\",\"customTrackingServer\":\"nbcume.sc.omtrdc.net\",\"trackingServer\":\"nbcume.hb.omtrdc.net\",\"account\":\"nbcutvedev,nbcunetworkbu\",\"publisherId\":\"nbc\",\"version\":\"1.5\",\"chapterTracking\":1},\"freewheel\":{\"custom\":{\"aam_segments\":\"_fw_seg=384101:[VPSEGS]\",\"fw_cookie_id\":\"[UID_COOKIE_ID]\"},\"serverSide\":1,\"networkId\":\"169843\",\"serverURL\":\"http://29773.s.fwmrm.net\",\"videoAssetId\":\"nbc_Live_12345\",\"profileId\":\"169843:nbcu_anvato_web\",\"siteSectionId\":\"nbc_tve_wnbc_live_web\",\"companion\":\"slid=300companion&slau=FW%20Video-300x60&ptgt=p&flag=+cmpn&w=300&h=60;\",\"eventType\":\"Network\"},\"conviva\":{\"serviceUrl\":\"https://livepass.conviva.com\",\"clientId\":\"c3.NBC\"},\"omniture\":false},\"debug\":0,\"pInstance\":\"[HTML_ID]\",\"mcp\":\"AFFLSTG\", \"customUIController\":{\"showUIComponents\":{\"control\":false, \"splash\":false, \"captionSetting\":false, \"preview\":true, \"share\":false}, \"loadAssets\":[{\"type\":\"stylesheet\", \"url\":\"http://w3.cdn.anvato.net/player/stage/nbc/custom-ui/controller.css\"},{\"type\":\"script\", \"url\":\"http://w3.cdn.anvato.net/player/stage/nbc/custom-ui/controller.min.js\"}, {\"type\":\"view\", \"url\":\"http://w3.cdn.anvato.net/player/stage/nbc/custom-ui/custom-controller.html\"}]} }"
+            }
+        },
+        {
+            "name": "USA_ONEAPP_STAGELIVEPlayer",
+            "class": "ANVATO_V3",
+            "specificConfig": {
+                "PlayerType": "ANVATO_V3",
+                "conviva": "{\"enabled\":true, \"CUSTOMER_KEY\":\"5236d0980748b4d4e0ea4dec01db0a78006ad447\", \"TOUCHSTONE_SERVICE_URL\":\"https://nbcu-central.testonly.conviva.com\", \"assetName\":\"[@@PROGRAM_ID@@] @@TITLE@@ @@EPISODE_TITLE@@\", \"streamUrl\":\"http://cp-nbclive-poc.akamai-hd.net/@@CALL_SIGN@@-station/master.m3u8\",\"applicationName\":\"Cloudpath Desktop Player\",\"defaultResource\":\"AKAMAI\", \"streamType\":\"LIVE\", \"product\":\"nbc.com\", \"viewerId\":\"[M_PARTICLE_ID]\", \"mParticleId\":\"[M_PARTICLE_ID]\", \"appVersion\":\"[PAGE_APP_VERSION]\", \"deviceId\":\"[IP_ADDRESS]\", \"brand\":\"USA\", \"stitchType\":\"server\", \"stitchVendor\":\"Anvato\", \"streamProtocol\":\"HLS\", \"playerVendor\":\"Anvato\", \"playbackDevice\":\"Desktop\", \"appSessionId\":\"[APP_SESSION_ID]\", \"videoInitialized\":\"Start\"}",
+                "entitlement": "{\"authenticator\":\"adobePass\",\"authorizer\":\"adobePass\",\"requestor\":\"usa\",\"resourceId\":\"usa\"}",
+                "authKillFeatureEnabled": true,
+                "authKillSettings": "{\"async\": true,\"crossDomain\": true,\"url\": \"https://ws-cloudpath.media.nbcuni.com/ws/services/geo/live/usa\",\"type\":\"POST\",\"headers\": {\"authorization\": \"CONFIG-TOKEN key=\\\"usa_oneapp_linear\\\", version=\\\"3.0\\\", type=\\\"cpc\\\"\", \"content-type\": \"application/json\",\"accept\": \"application/media.geo-v1+json\"},\"data\":\"{\\\"device\\\":\\\"web\\\",\\\"adobeMvpdId\\\":\\\"@MVPD_ID@\\\",\\\"serviceZip\\\":\\\"@MVPD_HOMEZIP@\\\",\\\"encryptedZip\\\":\\\"@MVPD_ENCRYPTED_HOMEZIP@\\\" @CALLSIGN_OVERRIDE@}\"}",
+                "concurrencyInitializationSettings": "{\"timeout\":10000,\"async\":true,\"crossDomain\":true,\"url\":\"https://streams.adobeprimetime.com/v2/sessions/[MVPD]/[ENCODED_UPSTREAM_USER_ID]\",\"type\":\"POST\",\"headers\":{\"authorization\":\"Basic MGEwNTIzYzQtMDE5Zi00OTVhLThlZTgtNzgzZWQ2MmZkZmQzOg==\"},\"data\":\"epl=true\"}",
+                "concurrencyPollingSettings": "{\"timeout\":10000,\"async\":true,\"crossDomain\":true,\"url\":\"https://streams.adobeprimetime.com/v2/sessions/[MVPD]/[ENCODED_UPSTREAM_USER_ID]/[LOCATION]\",\"type\":\"POST\",\"headers\":{\"authorization\":\"Basic MGEwNTIzYzQtMDE5Zi00OTVhLThlZTgtNzgzZWQ2MmZkZmQzOg==\"},\"data\":\"epl=true\"}",
+                "concurrencyTerminationSettings": "{\"timeout\":10000,\"async\":true,\"crossDomain\":true,\"url\":\"https://streams.adobeprimetime.com/v2/sessions/[MVPD]/[ENCODED_UPSTREAM_USER_ID]/[LOCATION]\",\"type\":\"DELETE\",\"headers\":{\"authorization\":\"Basic MGEwNTIzYzQtMDE5Zi00OTVhLThlZTgtNzgzZWQ2MmZkZmQzOg==\"},\"data\":\"epl=true\"}",
+                "unsupportedDeviceURL": "//tve-staging-nbc.nbcuni.com/player/stage/UnsupportedDevice_New.html?guid=[VIDEO_ID]",
+                "anvload": "https://w3.cdn.anvato.net/player/stage/nbc/scripts/anvload.js",
+                "anvpdata": "{\"trackTimePeriod\":1, \"width\":\"100%\",\"height\":\"100%\",\"accessKey\":\"BAogww51jIMa2JnH1BcYpXM5F658RNAL\",\"video\":\"usa-dt\",\"mcp\": \"NBC_GN_CABLE\",\"recom\":0,\"clientSideAdTracking\":1,\"accessControl\":{\"mvpd\":\"[MVPD_ID]\"},\"plugins\":{\"heartbeat\":{\"marketingCloudId\":\"A8AB776A5245B4220A490D44@AdobeOrg\",\"customTrackingServer\":\"nbcume.sc.omtrdc.net\",\"trackingServer\":\"nbcume.hb.omtrdc.net\",\"account\":\"nbcutvedev, nbcunetworkbu\",\"publisherId\":\"nbc\",\"version\":\"1.5\",\"chapterTracking\":1},\"freewheel\":{\"custom\":{\"aam_segments\":\"_fw_seg=384101:[VPSEGS]\",\"fw_cookie_id\":\"[UID_COOKIE_ID]\"},\"serverSide\":1,\"networkId\":\"169843\",\"serverURL\":\"http://29773.s.fwmrm.net\",\"videoAssetId\":\"nbc_Live_12345\",\"profileId\":\"169843:nbcu_anvato_web\",\"siteSectionId\":\"usa_tveverywhere_linear_hub\",\"companion\":\"slid=300companion&slau=FW%20Video-300x60&ptgt=p&flag=+cmpn&w=300&h=60;\",\"eventType\":\"Network\"},\"conviva\":{\"serviceUrl\":\"https://livepass.conviva.com\",\"clientId\":\"c3.NBC\"},\"omniture\":false},\"debug\":0,\"pInstance\":\"[HTML_ID]\", \"customUIController\":{\"showUIComponents\":{\"control\":false, \"splash\":false, \"captionSetting\":false, \"preview\":true, \"share\":false}, \"loadAssets\":[{\"type\":\"stylesheet\", \"url\":\"http://w3.cdn.anvato.net/player/stage/nbc/custom-ui/controller.css\"},{\"type\":\"script\", \"url\":\"http://w3.cdn.anvato.net/player/stage/nbc/custom-ui/controller.min.js\"}, {\"type\":\"view\", \"url\":\"http://w3.cdn.anvato.net/player/stage/nbc/custom-ui/custom-controller.html\"}]} }"
+            }
+        },
+        {
+            "name": "SYFY_ONEAPP_STAGELIVEPlayer",
+            "class": "ANVATO_V3",
+            "specificConfig": {
+                "PlayerType": "ANVATO_V3",
+                "conviva": "{\"enabled\":true, \"CUSTOMER_KEY\":\"5236d0980748b4d4e0ea4dec01db0a78006ad447\", \"TOUCHSTONE_SERVICE_URL\":\"https://nbcu-central.testonly.conviva.com\", \"assetName\":\"[@@PROGRAM_ID@@] @@TITLE@@ @@EPISODE_TITLE@@\", \"streamUrl\":\"http://cp-nbclive-poc.akamai-hd.net/@@CALL_SIGN@@-station/master.m3u8\",\"applicationName\":\"Cloudpath Desktop Player\",\"defaultResource\":\"AKAMAI\", \"streamType\":\"LIVE\", \"product\":\"nbc.com\", \"viewerId\":\"[M_PARTICLE_ID]\", \"mParticleId\":\"[M_PARTICLE_ID]\", \"appVersion\":\"[PAGE_APP_VERSION]\", \"deviceId\":\"[IP_ADDRESS]\", \"brand\":\"Syfy\", \"stitchType\":\"server\", \"stitchVendor\":\"Anvato\", \"streamProtocol\":\"HLS\", \"playerVendor\":\"Anvato\", \"playbackDevice\":\"Desktop\", \"appSessionId\":\"[APP_SESSION_ID]\", \"videoInitialized\":\"Start\"}",
+                "entitlement": "{\"authenticator\":\"adobePass\",\"authorizer\":\"adobePass\",\"requestor\":\"syfy\",\"resourceId\":\"syfy\"}",
+                "authKillFeatureEnabled": true,
+                "authKillSettings": "{\"async\": true,\"crossDomain\": true,\"url\": \"https://ws-cloudpath-stage.media.nbcuni.com/ws/services/geo/live/syfy\",\"type\":\"POST\",\"headers\": {\"authorization\": \"CONFIG-TOKEN key=\\\"syfy_oneapp_linear\\\", version=\\\"3.0\\\", type=\\\"cpc\\\"\", \"content-type\": \"application/json\",\"accept\": \"application/media.geo-v1+json\"},\"data\":\"{\\\"device\\\":\\\"web\\\",\\\"adobeMvpdId\\\":\\\"@MVPD_ID@\\\",\\\"serviceZip\\\":\\\"@MVPD_HOMEZIP@\\\",\\\"encryptedZip\\\":\\\"@MVPD_ENCRYPTED_HOMEZIP@\\\" @CALLSIGN_OVERRIDE@}\"}",
+                "unsupportedDeviceURL": "//assets.syfy.com/live/UnsupportedDevice.html",
+                "anvload": "https://w3.cdn.anvato.net/player/stage/nbc/scripts/anvload.js",
+                "anvpdata": "{\"trackTimePeriod\":1, \"width\":\"100%\",\"height\":\"100%\",\"accessKey\":\"xyKEgBajZuRr6DEC0Kt7XpD1cnNW9gAv\",\"video\":\"syfy-dt\",\"recom\":0,\"clientSideAdTracking\":1,\"accessControl\":{\"mvpd\":\"[MVPD_ID]\"},\"plugins\":{\"heartbeat\":{\"marketingCloudId\":\"A8AB776A5245B4220A490D44@AdobeOrg\",\"customTrackingServer\":\"nbcume.sc.omtrdc.net\",\"trackingServer\":\"nbcume.hb.omtrdc.net\",\"account\":\"nbcutvedev, nbcunetworkbu\",\"publisherId\":\"nbc\",\"version\":\"1.5\",\"chapterTracking\":1},\"freewheel\":{\"custom\":{\"aam_segments\":\"_fw_seg=384101:[VPSEGS]\",\"fw_cookie_id\":\"[UID_COOKIE_ID]\"},\"serverSide\":1,\"networkId\":\"169843\",\"serverURL\":\"http://29773.s.fwmrm.net\",\"videoAssetId\":\"nbc_Live_12345\",\"profileId\":\"169843:nbcu_anvato_web\",\"siteSectionId\":\"syfy_tveverywhere_linear_hub\",\"companion\":\"slid=300companion&slau=FW%20Video-300x60&ptgt=p&flag=+cmpn&w=300&h=60;\",\"eventType\":\"Network\"},\"conviva\":{\"serviceUrl\":\"https://livepass.conviva.com\",\"clientId\":\"c3.NBC\"},\"omniture\":false},\"debug\":0,\"pInstance\":\"[HTML_ID]\",\"mcp\":\"NBC_GN_CABLE\", \"customUIController\":{\"showUIComponents\":{\"control\":false, \"splash\":false, \"captionSetting\":false, \"preview\":true, \"share\":false}, \"loadAssets\":[{\"type\":\"stylesheet\", \"url\":\"http://w3.cdn.anvato.net/player/stage/nbc/custom-ui/controller.css\"},{\"type\":\"script\", \"url\":\"http://w3.cdn.anvato.net/player/stage/nbc/custom-ui/controller.min.js\"}, {\"type\":\"view\", \"url\":\"http://w3.cdn.anvato.net/player/stage/nbc/custom-ui/custom-controller.html\"}]} }"
+            }
+        },
+        {
+            "name": "BRAVO_ONEAPP_STAGELIVEPlayer",
+            "class": "ANVATO_V3",
+            "specificConfig": {
+                "PlayerType": "ANVATO_V3",
+                "conviva": "{\"enabled\":true, \"CUSTOMER_KEY\":\"5236d0980748b4d4e0ea4dec01db0a78006ad447\", \"TOUCHSTONE_SERVICE_URL\":\"https://nbcu-central.testonly.conviva.com\", \"assetName\":\"[@@PROGRAM_ID@@] @@TITLE@@ @@EPISODE_TITLE@@\", \"streamUrl\":\"http://cp-nbclive-poc.akamai-hd.net/@@CALL_SIGN@@-station/master.m3u8\",\"applicationName\":\"Cloudpath Desktop Player\",\"defaultResource\":\"AKAMAI\", \"streamType\":\"LIVE\", \"product\":\"nbc.com\", \"viewerId\":\"[M_PARTICLE_ID]\", \"mParticleId\":\"[M_PARTICLE_ID]\", \"appVersion\":\"[PAGE_APP_VERSION]\", \"deviceId\":\"[IP_ADDRESS]\", \"brand\":\"Bravo\", \"stitchType\":\"server\", \"stitchVendor\":\"Anvato\", \"streamProtocol\":\"HLS\", \"playerVendor\":\"Anvato\", \"playbackDevice\":\"Desktop\", \"appSessionId\":\"[APP_SESSION_ID]\", \"videoInitialized\":\"Start\"}",
+                "entitlement": "{\"authenticator\":\"adobePass\",\"authorizer\":\"adobePass\",\"requestor\":\"bravo\",\"resourceId\":\"nbc_linear\"}",
+                "authKillFeatureEnabled": true,
+                "authKillSettings": "{\"async\": true,\"crossDomain\": true,\"url\": \"https://ws-cloudpath-stage.media.nbcuni.com/ws/services/geo/live/bravo\",\"type\":\"POST\",\"headers\": {\"authorization\": \"CONFIG-TOKEN key=\\\"bravo_oneapp_linear\\\", version=\\\"3.0\\\", type=\\\"cpc\\\"\",\"content-type\": \"application/json\",\"accept\": \"application/media.geo-v1+json\"},\"data\":\"{\\\"device\\\":\\\"web\\\",\\\"adobeMvpdId\\\":\\\"@MVPD_ID@\\\",\\\"serviceZip\\\":\\\"@MVPD_HOMEZIP@\\\",\\\"encryptedZip\\\":\\\"@MVPD_ENCRYPTED_HOMEZIP@\\\" @CALLSIGN_OVERRIDE@}\"}",
+                "concurrencyInitializationSettings": "{\"timeout\":10000,\"async\":true,\"crossDomain\":true,\"url\":\"https://streams.adobeprimetime.com/v2/sessions/[MVPD]/[ENCODED_UPSTREAM_USER_ID]\",\"type\":\"POST\",\"headers\":{\"authorization\":\"Basic NjBlZDhjMDMtM2MwNi00OTVmLTk4MmUtNmE1ZjIxMmY5OGE4Og==\"},\"data\":\"epl=true\"}",
+                "concurrencyPollingSettings": "{\"timeout\":10000,\"async\":true,\"crossDomain\":true,\"url\":\"https://streams.adobeprimetime.com/v2/sessions/[MVPD]/[ENCODED_UPSTREAM_USER_ID]/[LOCATION]\",\"type\":\"POST\",\"headers\":{\"authorization\":\"Basic NjBlZDhjMDMtM2MwNi00OTVmLTk4MmUtNmE1ZjIxMmY5OGE4Og==\"},\"data\":\"epl=true\"}",
+                "concurrencyTerminationSettings": "{\"timeout\":10000,\"async\":true,\"crossDomain\":true,\"url\":\"https://streams.adobeprimetime.com/v2/sessions/[MVPD]/[ENCODED_UPSTREAM_USER_ID]/[LOCATION]\",\"type\":\"DELETE\",\"headers\":{\"authorization\":\"Basic NjBlZDhjMDMtM2MwNi00OTVmLTk4MmUtNmE1ZjIxMmY5OGE4Og==\"},\"data\":\"epl=true\"}",
+                "unsupportedDeviceURL": "//tve-staging-nbc.nbcuni.com/player/stage/UnsupportedDevice_New.html?guid=[VIDEO_ID]",
+                "anvload": "https://w3.cdn.anvato.net/player/stage/nbc/scripts/anvload.js",
+                "anvpdata": "{\"trackTimePeriod\":1, \"width\":\"100%\",\"height\":\"100%\",\"accessKey\":\"vy8a98X7zCwrRqbHrLUjYzwDiK2b70Qb\",\"video\":\"bravo-dt\",\"recom\":0,\"clientSideAdTracking\":1,\"accessControl\":{\"mvpd\":\"[MVPD_ID]\"},\"plugins\":{\"heartbeat\":{\"marketingCloudId\":\"A8AB776A5245B4220A490D44@AdobeOrg\",\"customTrackingServer\":\"nbcume.sc.omtrdc.net\",\"trackingServer\":\"nbcume.hb.omtrdc.net\",\"account\":\"nbcutvedev, nbcunetworkbu\",\"publisherId\":\"nbc\",\"version\":\"1.5\",\"chapterTracking\":1},\"freewheel\":{\"custom\":{\"aam_segments\":\"_fw_seg=384101:[VPSEGS]\",\"fw_cookie_id\":\"[UID_COOKIE_ID]\"},\"serverSide\":1,\"networkId\":\"169843\",\"serverURL\":\"http://29773.s.fwmrm.net\",\"videoAssetId\":\"nbc_Live_12345\",\"profileId\":\"169843:nbcu_anvato_web\",\"siteSectionId\":\"oneapp_desktop_computer_web_livelinear_bravo\",\"companion\":\"slid=300companion&slau=FW%20Video-300x60&ptgt=p&flag=+cmpn&w=300&h=60;\",\"eventType\":\"Network\"},\"conviva\":{\"serviceUrl\":\"https://livepass.conviva.com\",\"clientId\":\"c3.NBC\"},\"omniture\":false},\"debug\":0,\"pInstance\":\"[HTML_ID]\",\"mcp\":\"NBC_GN_CABLE\", \"customUIController\":{\"showUIComponents\":{\"control\":false, \"splash\":false, \"captionSetting\":false, \"preview\":true, \"share\":false}, \"loadAssets\":[{\"type\":\"stylesheet\", \"url\":\"http://w3.cdn.anvato.net/player/stage/nbc/custom-ui/controller.css\"},{\"type\":\"script\", \"url\":\"http://w3.cdn.anvato.net/player/stage/nbc/custom-ui/controller.min.js\"}, {\"type\":\"view\", \"url\":\"http://w3.cdn.anvato.net/player/stage/nbc/custom-ui/custom-controller.html\"}]} }"
+            }
+        },
+        {
+            "name": "CNBC_ONEAPP_STAGELIVEPlayer",
+            "class": "ANVATO_V3",
+            "specificConfig": {
+                "PlayerType": "ANVATO_V3",
+                "conviva": "{\"enabled\":true, \"CUSTOMER_KEY\":\"5236d0980748b4d4e0ea4dec01db0a78006ad447\", \"TOUCHSTONE_SERVICE_URL\":\"https://nbcu-central.testonly.conviva.com\", \"assetName\":\"[@@PROGRAM_ID@@] @@TITLE@@ @@EPISODE_TITLE@@\", \"streamUrl\":\"http://cp-nbclive-poc.akamai-hd.net/@@CALL_SIGN@@-station/master.m3u8\",\"applicationName\":\"Cloudpath Desktop Player\",\"defaultResource\":\"AKAMAI\", \"streamType\":\"LIVE\", \"product\":\"nbc.com\", \"viewerId\":\"[M_PARTICLE_ID]\", \"mParticleId\":\"[M_PARTICLE_ID]\", \"appVersion\":\"[PAGE_APP_VERSION]\", \"deviceId\":\"[IP_ADDRESS]\", \"brand\":\"CNBC\", \"stitchType\":\"server\", \"stitchVendor\":\"Anvato\", \"streamProtocol\":\"HLS\", \"playerVendor\":\"Anvato\", \"playbackDevice\":\"Desktop\", \"appSessionId\":\"[APP_SESSION_ID]\", \"videoInitialized\":\"Start\"}",
+                "tempPassFeatureEnabled": false,
+                "tempPassSettings": "{\"timeout\":10000,\"async\":true,\"crossDomain\":true,\"url\":\"https://stage-access-cloudpath.media.nbcuni.com/access/live/cnbc\",\"type\":\"POST\",\"headers\":{\"Authorization\":\"NBC-Referrer key=roku_cnbc_desktop,version=3.0,type=cpc,time=@TIMESTAMP@\"},\"data\":\"{\\\"device\\\":\\\"web\\\",\\\"deviceId\\\":\\\"@DEVICE_ID@\\\",\\\"usetemppass\\\":\\\"true\\\"}\"}",
+                "entitlement": "{\"authenticator\":\"adobePass\",\"authorizer\":\"adobePass\",\"requestor\":\"cnbc\",\"resourceId\":\"nbc_linear\"}",
+                "authKillFeatureEnabled": true,
+                "authKillSettings": "{\"async\": true,\"crossDomain\": true,\"url\": \"https://ws-cloudpath.media.nbcuni.com/ws/services/geo/live/cnbc\",\"type\":\"POST\",\"headers\": {\"authorization\": \"CONFIG-TOKEN key=\\\"cnbc_oneapp_linear\\\", version=\\\"3.0\\\", type=\\\"cpc\\\"\", \"content-type\": \"application/json\",\"accept\": \"application/media.geo-v1+json\"},\"data\":\"{\\\"device\\\":\\\"web\\\",\\\"adobeMvpdId\\\":\\\"@MVPD_ID@\\\",\\\"serviceZip\\\":\\\"@MVPD_HOMEZIP@\\\",\\\"encryptedZip\\\":\\\"@MVPD_ENCRYPTED_HOMEZIP@\\\"}\"}",
+                "concurrencyInitializationSettings": "{\"timeout\":10000,\"async\":true,\"crossDomain\":true,\"url\":\"https://streams.adobeprimetime.com/v2/sessions/[MVPD]/[ENCODED_UPSTREAM_USER_ID]\",\"type\":\"POST\",\"headers\":{\"authorization\":\"Basic NjM0NzAyNGItMzZmZS00NmNiLWJjYWEtODk0NzM1YTIzNjZlOg==\"},\"data\":\"epl=true\"}",
+                "concurrencyPollingSettings": "{\"timeout\":10000,\"async\":true,\"crossDomain\":true,\"url\":\"https://streams.adobeprimetime.com/v2/sessions/[MVPD]/[ENCODED_UPSTREAM_USER_ID]/[LOCATION]\",\"type\":\"POST\",\"headers\":{\"authorization\":\"Basic NjM0NzAyNGItMzZmZS00NmNiLWJjYWEtODk0NzM1YTIzNjZlOg==\"},\"data\":\"epl=true\"}",
+                "concurrencyTerminationSettings": "{\"timeout\":10000,\"async\":true,\"crossDomain\":true,\"url\":\"https://streams.adobeprimetime.com/v2/sessions/[MVPD]/[ENCODED_UPSTREAM_USER_ID]/[LOCATION]\",\"type\":\"DELETE\",\"headers\":{\"authorization\":\"Basic NjM0NzAyNGItMzZmZS00NmNiLWJjYWEtODk0NzM1YTIzNjZlOg==\"},\"data\":\"epl=true\"}",
+                "unsupportedDeviceURL": "//tve-staging-nbc.nbcuni.com/player/stage/UnsupportedDevice_New.html?guid=[VIDEO_ID]",
+                "anvload": "https://w3.cdn.anvato.net/player/stage/nbc/scripts/anvload.js",
+                "anvpdata": "{\"trackTimePeriod\":1, \"width\":\"100%\",\"height\":\"100%\",\"accessKey\":\"g43oeBzJrCml7o6fa5fRL1ErCdeD8z4K\",\"video\":\"cnbc-dt\",\"recom\":0,\"clientSideAdTracking\":1,\"accessControl\":{\"mvpd\":\"[MVPD_ID]\"},\"plugins\":{\"heartbeat\":{\"marketingCloudId\":\"A8AB776A5245B4220A490D44@AdobeOrg\",\"customTrackingServer\":\"nbcume.sc.omtrdc.net\",\"trackingServer\":\"nbcume.hb.omtrdc.net\",\"account\":\"nbcutvedev, nbcunetworkbu\",\"publisherId\":\"nbc\",\"version\":\"1.5\",\"chapterTracking\":1},\"freewheel\":{\"custom\":{\"aam_segments\":\"_fw_seg=384101:[VPSEGS]\",\"_fw_vcid2\":\"[MPS_COOKIE_ID]\",\"fw_cookie_id\":\"[UID_COOKIE_ID]\"},\"serverSide\":1,\"networkId\":\"169843\",\"serverURL\":\"http://29773.s.fwmrm.net\",\"videoAssetId\":\"nbc_Live_12345\",\"profileId\":\"169843:nbcu_anvato_web\",\"siteSectionId\":\"oneapp_desktop_computer_web_livelinear_cnbc\",\"companion\":\"slid=300companion&slau=FW%20Video-300x60&ptgt=p&flag=+amcb+slcb+sltp+fbad+emcr+vicb+ssus&w=300&h=60;\",\"eventType\":\"Network\"},\"conviva\":{\"serviceUrl\":\"https://livepass.conviva.com\",\"clientId\":\"c3.NBC\"},\"omniture\":false},\"debug\":0,\"pInstance\":\"[HTML_ID]\",\"mcp\":\"AFFLSTG\", \"customUIController\":{\"showUIComponents\":{\"control\":false, \"splash\":false, \"captionSetting\":false, \"preview\":true, \"share\":false}, \"loadAssets\":[{\"type\":\"stylesheet\", \"url\":\"http://w3.cdn.anvato.net/player/stage/nbc/custom-ui/controller.css\"},{\"type\":\"script\", \"url\":\"http://w3.cdn.anvato.net/player/stage/nbc/custom-ui/controller.min.js\"}, {\"type\":\"view\", \"url\":\"http://w3.cdn.anvato.net/player/stage/nbc/custom-ui/custom-controller.html\"}]} }"
+            }
+        },
+        {
+            "name": "E_ONEAPP_STAGELIVEPlayer",
+            "class": "ANVATO_V3",
+            "specificConfig": {
+                "PlayerType": "ANVATO_V3",
+                "entitlement": "{\"authenticator\":\"adobePass\",\"authorizer\":\"adobePass\",\"requestor\":\"e\",\"resourceId\":\"e\"}",
+                "authKillFeatureEnabled": true,
+                "authKillSettings": "{\"async\": true,\"crossDomain\": true,\"url\": \"https://ws-cloudpath-stage.media.nbcuni.com/ws/services/geo/live/e\",\"type\":\"POST\",\"headers\": {\"authorization\": \"CONFIG-TOKEN key=\\\"e_oneapp_linear\\\", version=\\\"3.0\\\", type=\\\"cpc\\\"\", \"content-type\": \"application/json\",\"accept\": \"application/media.geo-v1+json\"},\"data\":\"{\\\"device\\\":\\\"web\\\",\\\"adobeMvpdId\\\":\\\"@MVPD_ID@\\\",\\\"serviceZip\\\":\\\"@MVPD_HOMEZIP@\\\",\\\"encryptedZip\\\":\\\"@MVPD_ENCRYPTED_HOMEZIP@\\\" @CALLSIGN_OVERRIDE@}\"}",
+                "conviva": "{\"enabled\":true, \"CUSTOMER_KEY\":\"5236d0980748b4d4e0ea4dec01db0a78006ad447\", \"TOUCHSTONE_SERVICE_URL\":\"https://nbcu-central.testonly.conviva.com\", \"assetName\":\"[@@PROGRAM_ID@@] @@TITLE@@ @@EPISODE_TITLE@@\", \"streamUrl\":\"http://cp-nbclive-poc.akamai-hd.net/@@CALL_SIGN@@-station/master.m3u8\",\"applicationName\":\"Cloudpath Desktop Player\",\"defaultResource\":\"AKAMAI\", \"streamType\":\"LIVE\", \"product\":\"nbc.com\", \"viewerId\":\"[M_PARTICLE_ID]\", \"mParticleId\":\"[M_PARTICLE_ID]\", \"appVersion\":\"[PAGE_APP_VERSION]\", \"deviceId\":\"[IP_ADDRESS]\", \"brand\":\"E!\", \"stitchType\":\"server\", \"stitchVendor\":\"Anvato\", \"streamProtocol\":\"HLS\", \"playerVendor\":\"Anvato\", \"playbackDevice\":\"Desktop\", \"appSessionId\":\"[APP_SESSION_ID]\", \"videoInitialized\":\"Start\"}",
+                "concurrencyInitializationSettings": "{\"timeout\":10000,\"async\":true,\"crossDomain\":true,\"url\":\"https://streams.adobeprimetime.com/v2/sessions/[MVPD]/[ENCODED_UPSTREAM_USER_ID]\",\"type\":\"POST\",\"headers\":{\"authorization\":\"Basic MzQzOWYyMDEtZjM0ZS00ZGQ3LWFiMzMtYTQwZjI3NDcyNjI4Og==\"},\"data\":\"epl=true\"}",
+                "concurrencyPollingSettings": "{\"timeout\":10000,\"async\":true,\"crossDomain\":true,\"url\":\"https://streams.adobeprimetime.com/v2/sessions/[MVPD]/[ENCODED_UPSTREAM_USER_ID]/[LOCATION]\",\"type\":\"POST\",\"headers\":{\"authorization\":\"Basic MzQzOWYyMDEtZjM0ZS00ZGQ3LWFiMzMtYTQwZjI3NDcyNjI4Og==\"},\"data\":\"epl=true\"}",
+                "concurrencyTerminationSettings": "{\"timeout\":10000,\"async\":true,\"crossDomain\":true,\"url\":\"https://streams.adobeprimetime.com/v2/sessions/[MVPD]/[ENCODED_UPSTREAM_USER_ID]/[LOCATION]\",\"type\":\"DELETE\",\"headers\":{\"authorization\":\"Basic MzQzOWYyMDEtZjM0ZS00ZGQ3LWFiMzMtYTQwZjI3NDcyNjI4Og==\"},\"data\":\"epl=true\"}",
+                "unsupportedDeviceURL": "//tve-staging-nbc.nbcuni.com/player/stage/UnsupportedDevice_New.html?guid=[VIDEO_ID]",
+                "anvload": "https://w3.cdn.anvato.net/player/stage/nbc/scripts/anvload.js",
+                "anvpdata": "{\"trackTimePeriod\":1, \"width\":\"100%\",\"height\":\"100%\",\"accessKey\":\"g43OPp9boIml7o6fDOIRL1ErCdeD8z4K\",\"video\":\"e!-dt\",\"recom\":0,\"clientSideAdTracking\":1,\"accessControl\":{\"mvpd\":\"[MVPD_ID]\"},\"plugins\":{\"heartbeat\":{\"marketingCloudId\":\"A8AB776A5245B4220A490D44@AdobeOrg\",\"customTrackingServer\":\"nbcume.sc.omtrdc.net\",\"trackingServer\":\"nbcume.hb.omtrdc.net\",\"account\":\"nbcutvedev, nbcunetworkbu\",\"publisherId\":\"nbc\",\"version\":\"1.5\",\"chapterTracking\":1},\"freewheel\":{\"custom\":{\"aam_segments\":\"_fw_seg=384101:[VPSEGS]\",\"fw_cookie_id\":\"[UID_COOKIE_ID]\"},\"serverSide\":1,\"networkId\":\"169843\",\"serverURL\":\"http://29773.s.fwmrm.net\",\"videoAssetId\":\"nbc_Live_12345\",\"profileId\":\"169843:nbcu_anvato_web\",\"siteSectionId\":\"oneapp_desktop_computer_web_livelinear_eonline\",\"companion\":\"slid=300companion&slau=FW%20Video-300x60&ptgt=p&flag=+cmpn&w=300&h=60;\",\"eventType\":\"Network\"},\"conviva\":{\"serviceUrl\":\"https://livepass.conviva.com\",\"clientId\":\"c3.NBC\"},\"omniture\":false},\"debug\":0,\"pInstance\":\"[HTML_ID]\",\"mcp\":\"NBC_GN_CABLE\", \"customUIController\":{\"showUIComponents\":{\"control\":false, \"splash\":false, \"captionSetting\":false, \"preview\":true, \"share\":false}, \"loadAssets\":[{\"type\":\"stylesheet\", \"url\":\"http://w3.cdn.anvato.net/player/stage/nbc/custom-ui/controller.css\"},{\"type\":\"script\", \"url\":\"http://w3.cdn.anvato.net/player/stage/nbc/custom-ui/controller.min.js\"}, {\"type\":\"view\", \"url\":\"http://w3.cdn.anvato.net/player/stage/nbc/custom-ui/custom-controller.html\"}]} }"
+            }
+        },
+        {
+            "name": "MSNBC_ONEAPP_STAGELIVEPlayer",
+            "class": "ANVATO_V3",
+            "specificConfig": {
+                "PlayerType": "ANVATO_V3",
+                "conviva": "{\"enabled\":true, \"CUSTOMER_KEY\":\"5236d0980748b4d4e0ea4dec01db0a78006ad447\", \"TOUCHSTONE_SERVICE_URL\":\"https://nbcu-central.testonly.conviva.com\", \"assetName\":\"[@@PROGRAM_ID@@] @@TITLE@@ @@EPISODE_TITLE@@\", \"streamUrl\":\"http://cp-nbclive-poc.akamai-hd.net/@@CALL_SIGN@@-station/master.m3u8\",\"applicationName\":\"Cloudpath Desktop Player\",\"defaultResource\":\"AKAMAI\", \"streamType\":\"LIVE\", \"product\":\"nbc.com\", \"viewerId\":\"[M_PARTICLE_ID]\", \"mParticleId\":\"[M_PARTICLE_ID]\", \"appVersion\":\"[PAGE_APP_VERSION]\", \"deviceId\":\"[IP_ADDRESS]\", \"brand\":\"MSNBC\", \"stitchType\":\"server\", \"stitchVendor\":\"Anvato\", \"streamProtocol\":\"HLS\", \"playerVendor\":\"Anvato\", \"playbackDevice\":\"Desktop\", \"appSessionId\":\"[APP_SESSION_ID]\", \"videoInitialized\":\"Start\"}",
+                "entitlement": "{\"authenticator\":\"adobePass\",\"authorizer\":\"adobePass\",\"requestor\":\"nbcentertainment\",\"resourceId\":\"nbc_linear\"}",
+                "authKillFeatureEnabled": true,
+                "authKillSettings": "{\"async\": true,\"crossDomain\": true,\"url\": \"https://ws-cloudpath.media.nbcuni.com/ws/services/geo/live/msnbc\",\"type\":\"POST\",\"headers\": {\"authorization\": \"CONFIG-TOKEN key=\\\"msnbc_oneapp_linear\\\", version=\\\"3.0\\\", type=\\\"cpc\\\"\", \"content-type\": \"application/json\",\"accept\": \"application/media.geo-v1+json\"},\"data\":\"{\\\"device\\\":\\\"web\\\",\\\"adobeMvpdId\\\":\\\"@MVPD_ID@\\\",\\\"serviceZip\\\":\\\"@MVPD_HOMEZIP@\\\",\\\"encryptedZip\\\":\\\"@MVPD_ENCRYPTED_HOMEZIP@\\\"}\"}",
+                "anvload": "https://w3.cdn.anvato.net/player/stage/nbc/scripts/anvload.js",
+                "anvpdata": "{\"trackTimePeriod\":1, \"width\":\"100%\",\"height\":\"100%\",\"accessKey\":\"3QLkogW1OUJ5VvPsrDH56DY2u7lgZWyY\",\"video\":\"msnbc-dt\",\"recom\":0,\"clientSideAdTracking\":1,\"accessControl\":{\"mvpd\":\"[MVPD_ID]\"},\"plugins\":{\"heartbeat\":{\"marketingCloudId\":\"A8AB776A5245B4220A490D44@AdobeOrg\",\"customTrackingServer\":\"nbcume.sc.omtrdc.net\",\"trackingServer\":\"nbcume.hb.omtrdc.net\",\"account\":\"nbcutvedev, nbcunetworkbu\",\"publisherId\":\"MSNBC\",\"version\":\"1.5\",\"chapterTracking\":1},\"freewheel\":{\"custom\":{\"aam_segments\":\"_fw_seg=384101:[VPSEGS]\",\"_fw_vcid2\":\"[MPS_COOKIE_ID]\",\"fw_cookie_id\":\"[UID_COOKIE_ID]\"},\"serverSide\":1,\"networkId\":\"169843\",\"serverURL\":\"http://29773.s.fwmrm.net\",\"videoAssetId\":\"nbc_Live_12345\",\"profileId\":\"169843:nbcu_anvato_web\",\"siteSectionId\":\"oneapp_desktop_computer_web_livelinear_msnbc\",\"companion\":\"slid=300companion&slau=FW%20Video-300x60&ptgt=p&flag=+cmpn&w=300&h=60;\",\"eventType\":\"Network\"},\"conviva\":{\"serviceUrl\":\"https://livepass.conviva.com\",\"clientId\":\"c3.NBC\"},\"omniture\":false},\"debug\":0,\"pInstance\":\"[HTML_ID]\",\"mcp\":\"AFFLSTG\", \"customUIController\":{\"showUIComponents\":{\"control\":false, \"splash\":false, \"captionSetting\":false, \"preview\":true, \"share\":false}, \"loadAssets\":[{\"type\":\"stylesheet\", \"url\":\"http://w3.cdn.anvato.net/player/stage/nbc/custom-ui/controller.css\"},{\"type\":\"script\", \"url\":\"http://w3.cdn.anvato.net/player/stage/nbc/custom-ui/controller.min.js\"}, {\"type\":\"view\", \"url\":\"http://w3.cdn.anvato.net/player/stage/nbc/custom-ui/custom-controller.html\"}]} }"
+            }
+        },
+        {
+            "name": "NBCUNIVERSO_ONEAPP_STAGELIVEPlayer",
+            "class": "ANVATO_V3",
+            "specificConfig": {
+                "PlayerType": "ANVATO_V3",
+                "conviva": "{\"enabled\":true, \"CUSTOMER_KEY\":\"5236d0980748b4d4e0ea4dec01db0a78006ad447\", \"TOUCHSTONE_SERVICE_URL\":\"https://nbcu-central.testonly.conviva.com\", \"assetName\":\"[@@PROGRAM_ID@@] @@TITLE@@ @@EPISODE_TITLE@@\", \"streamUrl\":\"http://cp-nbclive-poc.akamai-hd.net/@@CALL_SIGN@@-station/master.m3u8\",\"applicationName\":\"Cloudpath Desktop Player\",\"defaultResource\":\"AKAMAI\", \"streamType\":\"LIVE\", \"product\":\"nbc.com\", \"viewerId\":\"[M_PARTICLE_ID]\", \"mParticleId\":\"[M_PARTICLE_ID]\", \"appVersion\":\"[PAGE_APP_VERSION]\", \"deviceId\":\"[IP_ADDRESS]\", \"brand\":\"Universo\", \"stitchType\":\"server\", \"stitchVendor\":\"Anvato\", \"streamProtocol\":\"HLS\", \"playerVendor\":\"Anvato\", \"playbackDevice\":\"Desktop\", \"appSessionId\":\"[APP_SESSION_ID]\", \"videoInitialized\":\"Start\"}",
+                "entitlement": "{\"authenticator\":\"adobePass\",\"authorizer\":\"adobePass\",\"requestor\":\"mun2\",\"resourceId\":\"nbc_linear\"}",
+                "authKillFeatureEnabled": true,
+                "authKillSettings": "{\"async\": true,\"crossDomain\": true,\"url\": \"https://ws-cloudpath-stage.media.nbcuni.com/ws/services/geo/live/nbcuniverso\",\"type\":\"POST\",\"headers\": {\"authorization\": \"CONFIG-TOKEN key=\\\"universo_oneapp_linear\\\", version=\\\"3.0\\\", type=\\\"cpc\\\"\", \"content-type\": \"application/json\",\"accept\": \"application/media.geo-v1+json\"},\"data\":\"{\\\"device\\\":\\\"web\\\",\\\"adobeMvpdId\\\":\\\"@MVPD_ID@\\\",\\\"serviceZip\\\":\\\"@MVPD_HOMEZIP@\\\",\\\"encryptedZip\\\":\\\"@MVPD_ENCRYPTED_HOMEZIP@\\\" @CALLSIGN_OVERRIDE@}\"}",
+                "concurrencyInitializationSettings": "{\"timeout\":10000,\"async\":true,\"crossDomain\":true,\"url\":\"https://streams.adobeprimetime.com/v2/sessions/[MVPD]/[ENCODED_UPSTREAM_USER_ID]\",\"type\":\"POST\",\"headers\":{\"authorization\":\"Basic NjBlZDhjMDMtM2MwNi00OTVmLTk4MmUtNmE1ZjIxMmY5OGE4Og==\"},\"data\":\"epl=true\"}",
+                "concurrencyPollingSettings": "{\"timeout\":10000,\"async\":true,\"crossDomain\":true,\"url\":\"https://streams.adobeprimetime.com/v2/sessions/[MVPD]/[ENCODED_UPSTREAM_USER_ID]/[LOCATION]\",\"type\":\"POST\",\"headers\":{\"authorization\":\"Basic NjBlZDhjMDMtM2MwNi00OTVmLTk4MmUtNmE1ZjIxMmY5OGE4Og==\"},\"data\":\"epl=true\"}",
+                "concurrencyTerminationSettings": "{\"timeout\":10000,\"async\":true,\"crossDomain\":true,\"url\":\"https://streams.adobeprimetime.com/v2/sessions/[MVPD]/[ENCODED_UPSTREAM_USER_ID]/[LOCATION]\",\"type\":\"DELETE\",\"headers\":{\"authorization\":\"Basic NjBlZDhjMDMtM2MwNi00OTVmLTk4MmUtNmE1ZjIxMmY5OGE4Og==\"},\"data\":\"epl=true\"}",
+                "unsupportedDeviceURL": "//tve-staging-nbc.nbcuni.com/player/stage/UnsupportedDevice_New.html?guid=[VIDEO_ID]",
+                "anvload": "https://w3.cdn.anvato.net/player/stage/nbc/scripts/anvload.js",
+                "anvpdata": "{\"trackTimePeriod\":1, \"width\":\"100%\",\"height\":\"100%\",\"accessKey\":\"5QwRN5qKJTvGKlDTmnf7xwNZcjRmvEy9\",\"video\":\"nbcuniverso-dt\",\"recom\":0,\"clientSideAdTracking\":1,\"accessControl\":{\"mvpd\":\"[MVPD_ID]\"},\"plugins\":{\"heartbeat\":{\"marketingCloudId\":\"A8AB776A5245B4220A490D44@AdobeOrg\",\"customTrackingServer\":\"nbcume.sc.omtrdc.net\",\"trackingServer\":\"nbcume.hb.omtrdc.net\",\"account\":\"nbcutvedev, nbcunetworkbu\",\"publisherId\":\"nbc\",\"version\":\"1.5\",\"chapterTracking\":1},\"freewheel\":{\"custom\":{\"aam_segments\":\"_fw_seg=384101:[VPSEGS]\",\"_fw_vcid2\":\"[MPS_COOKIE_ID]\",\"fw_cookie_id\":\"[UID_COOKIE_ID]\"},\"serverSide\":1,\"networkId\":\"169843\",\"serverURL\":\"http://29773.s.fwmrm.net\",\"videoAssetId\":\"nbc_Live_12345\",\"profileId\":\"169843:nbcu_anvato_web\",\"siteSectionId\":\"oneapp_desktop_computer_web_livelinear_universo\",\"companion\":\"slid=300companion&slau=FW%20Video-300x60&ptgt=p&flag=+cmpn&w=300&h=60;\",\"eventType\":\"Network\"},\"conviva\":{\"serviceUrl\":\"https://livepass.conviva.com\",\"clientId\":\"c3.NBC\"},\"omniture\":false},\"debug\":0,\"pInstance\":\"[HTML_ID]\",\"mcp\":\"NBC_GN_CABLE\", \"customUIController\":{\"showUIComponents\":{\"control\":false, \"splash\":false, \"captionSetting\":false, \"preview\":true, \"share\":false}, \"loadAssets\":[{\"type\":\"stylesheet\", \"url\":\"http://w3.cdn.anvato.net/player/stage/nbc/custom-ui/controller.css\"},{\"type\":\"script\", \"url\":\"http://w3.cdn.anvato.net/player/stage/nbc/custom-ui/controller.min.js\"}, {\"type\":\"view\", \"url\":\"http://w3.cdn.anvato.net/player/stage/nbc/custom-ui/custom-controller.html\"}]} }"
+            }
+        },
+        {
+            "name": "OXYGEN_ONEAPP_STAGELIVEPlayer",
+            "class": "ANVATO_V3",
+            "specificConfig": {
+                "PlayerType": "ANVATO_V3",
+                "conviva": "{\"enabled\":true, \"CUSTOMER_KEY\":\"5236d0980748b4d4e0ea4dec01db0a78006ad447\", \"TOUCHSTONE_SERVICE_URL\":\"https://nbcu-central.testonly.conviva.com\", \"assetName\":\"[@@PROGRAM_ID@@] @@TITLE@@ @@EPISODE_TITLE@@\", \"streamUrl\":\"http://cp-nbclive-poc.akamai-hd.net/@@CALL_SIGN@@-station/master.m3u8\",\"applicationName\":\"Cloudpath Desktop Player\",\"defaultResource\":\"AKAMAI\", \"streamType\":\"LIVE\", \"product\":\"nbc.com\", \"viewerId\":\"[M_PARTICLE_ID]\", \"mParticleId\":\"[M_PARTICLE_ID]\", \"appVersion\":\"[PAGE_APP_VERSION]\", \"deviceId\":\"[IP_ADDRESS]\", \"brand\":\"Oxygen\", \"stitchType\":\"server\", \"stitchVendor\":\"Anvato\", \"streamProtocol\":\"HLS\", \"playerVendor\":\"Anvato\", \"playbackDevice\":\"Desktop\", \"appSessionId\":\"[APP_SESSION_ID]\", \"videoInitialized\":\"Start\"}",
+                "entitlement": "{\"authenticator\":\"adobePass\",\"authorizer\":\"adobePass\",\"requestor\":\"oxygen\",\"resourceId\":\"oxygen\"}",
+                "authKillFeatureEnabled": true,
+                "authKillSettings": "{\"async\": true,\"crossDomain\": true,\"url\": \"https://ws-cloudpath.media.nbcuni.com/ws/services/geo/live/oxygen\",\"type\":\"POST\",\"headers\": {\"authorization\": \"CONFIG-TOKEN key=\\\"oxygen_oneapp_linear\\\", version=\\\"3.0\\\", type=\\\"cpc\\\"\",\"content-type\": \"application/json\",\"accept\": \"application/media.geo-v1+json\"},\"data\":\"{\\\"device\\\":\\\"web\\\",\\\"adobeMvpdId\\\":\\\"@MVPD_ID@\\\",\\\"serviceZip\\\":\\\"@MVPD_HOMEZIP@\\\",\\\"encryptedZip\\\":\\\"@MVPD_ENCRYPTED_HOMEZIP@\\\" @CALLSIGN_OVERRIDE@}\"}",
+                "anvload": "https://w3.cdn.anvato.net/player/prod/nbc/scripts/anvload.js",
+                "anvpdata": "{\"trackTimePeriod\":1, \"width\":\"100%\",\"height\":\"100%\",\"accessKey\":\"wyJbYEDxKSdbkJ6S6RhW8meou82aqRy8\",\"video\":\"oxygen-dt\",\"recom\":0,\"clientSideAdTracking\":1,\"accessControl\":{\"mvpd\":\"[MVPD_ID]\"},\"plugins\":{\"heartbeat\":{\"marketingCloudId\":\"A8AB776A5245B4220A490D44@AdobeOrg\",\"customTrackingServer\":\"nbcume.sc.omtrdc.net\",\"trackingServer\":\"nbcume.hb.omtrdc.net\",\"account\":\"nbcutvedev, nbcunetworkbu\",\"publisherId\":\"A8AB776A5245B4220A490D44@AdobeOrg\",\"version\":\"1.5\",\"chapterTracking\":1},\"freewheel\":{\"custom\":{\"aam_segments\":\"_fw_seg=384101:[VPSEGS]\",\"fw_cookie_id\":\"[UID_COOKIE_ID]\"},\"serverSide\":1,\"networkId\":\"169843\",\"serverURL\":\"http://29773.s.fwmrm.net\",\"videoAssetId\":\"nbc_Live_12345\",\"profileId\":\"169843:nbcu_anvato_web\",\"siteSectionId\":\"oneapp_desktop_computer_web_livelinear_oxygen\",\"companion\":\"slid=300companion&slau=FW%20Video-300x60&ptgt=p&flag=+cmpn&w=300&h=60;\",\"eventType\":\"Network\"},\"conviva\":{\"serviceUrl\":\"https://livepass.conviva.com\",\"clientId\":\"c3.NBC\"},\"omniture\":false},\"debug\":0,\"pInstance\":\"[HTML_ID]\",\"mcp\":\"NBC_GN_CABLE\", \"customUIController\":{\"showUIComponents\":{\"control\":false, \"splash\":false, \"captionSetting\":false, \"preview\":true, \"share\":false}, \"loadAssets\":[{\"type\":\"stylesheet\", \"url\":\"http://w3.cdn.anvato.net/player/stage/nbc/custom-ui/controller.css\"},{\"type\":\"script\", \"url\":\"http://w3.cdn.anvato.net/player/stage/nbc/custom-ui/controller.min.js\"}, {\"type\":\"view\", \"url\":\"http://w3.cdn.anvato.net/player/stage/nbc/custom-ui/custom-controller.html\"}]} }"
+            }
+        },
+        {
+            "name": "UNIVERSALKIDS_ONEAPP_STAGELIVEPlayer",
+            "class": "ANVATO_V3",
+            "specificConfig": {
+                "PlayerType": "ANVATO_V3",
+                "conviva": "{\"enabled\":true, \"CUSTOMER_KEY\":\"5236d0980748b4d4e0ea4dec01db0a78006ad447\", \"TOUCHSTONE_SERVICE_URL\":\"https://nbcu-central.testonly.conviva.com\", \"assetName\":\"[@@PROGRAM_ID@@] @@TITLE@@ @@EPISODE_TITLE@@\", \"streamUrl\":\"http://cp-nbclive-poc.akamai-hd.net/@@CALL_SIGN@@-station/master.m3u8\",\"applicationName\":\"Cloudpath Desktop Player\",\"defaultResource\":\"AKAMAI\", \"streamType\":\"LIVE\", \"product\":\"nbc.com\", \"viewerId\":\"[M_PARTICLE_ID]\", \"mParticleId\":\"[M_PARTICLE_ID]\", \"appVersion\":\"[PAGE_APP_VERSION]\", \"deviceId\":\"[IP_ADDRESS]\", \"brand\":\"Universal Kids\", \"stitchType\":\"server\", \"stitchVendor\":\"Anvato\", \"streamProtocol\":\"HLS\", \"playerVendor\":\"Anvato\", \"playbackDevice\":\"Desktop\", \"appSessionId\":\"[APP_SESSION_ID]\", \"videoInitialized\":\"Start\"}",
+                "entitlement": "{\"authenticator\":\"adobePass\",\"authorizer\":\"adobePass\",\"requestor\":\"nbcentertainment\",\"resourceId\":\"universalkids\"}",
+                "authKillFeatureEnabled": true,
+                "authKillSettings": "{\"async\": true,\"crossDomain\": true,\"url\": \"https://ws-cloudpath-stage.media.nbcuni.com/ws/services/geo/live/universalkids\",\"type\":\"POST\",\"headers\": {\"authorization\": \"CONFIG-TOKEN key=\\\"unikids_web_prod\\\", type=\\\"cpc\\\"\",\"content-type\": \"application/json\",\"accept\": \"application/media.geo-v1+json\"},\"data\":\"{\\\"device\\\":\\\"web\\\",\\\"adobeMvpdId\\\":\\\"@MVPD_ID@\\\",\\\"serviceZip\\\":\\\"@MVPD_HOMEZIP@\\\",\\\"encryptedZip\\\":\\\"@MVPD_ENCRYPTED_HOMEZIP@\\\"}\"}",
+                "unsupportedDeviceURL": "//tve-staging-nbc.nbcuni.com/player/stage/UnsupportedDevice_New.html?guid=[VIDEO_ID]",
+                "anvload": "https://w3.cdn.anvato.net/player/stage/nbc/scripts/anvload.js",
+                "anvpdata": "{\"trackTimePeriod\":1, \"width\":\"100%\",\"height\":\"100%\",\"accessKey\":\"eyn5rPPbkfw2KYxH32fG1q58CbLJzM40\",\"video\":\"universalkids-dt\",\"recom\":0,\"clientSideAdTracking\":1,\"accessControl\":{\"mvpd\":\"[MVPD_ID]\"},\"plugins\":{\"heartbeat\":{\"marketingCloudId\":\"A8AB776A5245B4220A490D44@AdobeOrg\",\"customTrackingServer\":\"nbcume.sc.omtrdc.net\",\"trackingServer\":\"nbcume.hb.omtrdc.net\",\"account\":\"nbcutvedev, nbcunetworkbu\",\"publisherId\":\"nbc\",\"version\":\"1.5\",\"chapterTracking\":1},\"freewheel\":{\"custom\":{\"aam_segments\":\"_fw_seg=384101:[VPSEGS]\",\"fw_cookie_id\":\"[UID_COOKIE_ID]\"},\"serverSide\":1,\"networkId\":\"169843\",\"serverURL\":\"http://29773.s.fwmrm.net\",\"videoAssetId\":\"nbc_Live_12345\",\"profileId\":\"169843:nbcu_anvato_web\",\"siteSectionId\":\"nbc_tve_wnbc_live_web\",\"companion\":\"slid=300companion&slau=FW%20Video-300x60&ptgt=p&flag=+cmpn&w=300&h=60;\",\"eventType\":\"Network\"},\"conviva\":{\"serviceUrl\":\"https://livepass.conviva.com\",\"clientId\":\"c3.NBC\"},\"omniture\":false},\"debug\":0,\"pInstance\":\"[HTML_ID]\",\"mcp\":\"AFFLSTG\", \"customUIController\":{\"showUIComponents\":{\"control\":false, \"splash\":false, \"captionSetting\":false, \"preview\":true, \"share\":false}, \"loadAssets\":[{\"type\":\"stylesheet\", \"url\":\"http://w3.cdn.anvato.net/player/stage/nbc/custom-ui/controller.css\"},{\"type\":\"script\", \"url\":\"http://w3.cdn.anvato.net/player/stage/nbc/custom-ui/controller.min.js\"}, {\"type\":\"view\", \"url\":\"http://w3.cdn.anvato.net/player/stage/nbc/custom-ui/custom-controller.html\"}]} }"
+            }
+        },
+        {
+            "name": "TELEMUNDO_ONEAPP_STAGELIVEPlayer",
+            "class": "ANVATO_V3",
+            "specificConfig": {
+                "PlayerType": "ANVATO_V3",
+                "entitlement": "{\"authenticator\":\"adobePass\",\"authorizer\":\"adobePass\",\"requestor\":\"telemundo\",\"resourceId\":\"tlmd\"}",
+                "authKillFeatureEnabled": true,
+                "authKillSettings": "{\"async\": true,\"crossDomain\": true,\"url\": \"https://ws-cloudpath.media.nbcuni.com/ws/services/geo/live/tlmd\",\"type\":\"POST\",\"headers\": {\"authorization\": \"CONFIG-TOKEN key=\\\"tve_web_telemundo\\\", type=\\\"cpc\\\"\",\"content-type\": \"application/json\",\"accept\": \"application/media.geo-v1+json\"},\"data\":\"{\\\"device\\\":\\\"web\\\",\\\"adobeMvpdId\\\":\\\"@MVPD_ID@\\\",\\\"serviceZip\\\":\\\"@MVPD_HOMEZIP@\\\",\\\"encryptedZip\\\":\\\"@MVPD_ENCRYPTED_HOMEZIP@\\\"}\"}",
+                "unsupportedDeviceURL": "//tve-nbc.nbcuni.com/player/UnsupportedDevice_New.html?guid=[VIDEO_ID]",
+                "anvload": "https://w3.cdn.anvato.net/player/stage/nbc/scripts/anvload.js",
+                "anvpdata": "{\"trackTimePeriod\":1, \"width\":\"100%\",\"height\":\"100%\",\"accessKey\":\"wA7oDNYldfr6050Hwxi52lPZiVlB86Ap\",\"video\":\"tlmd-dt\",\"recom\":0,\"clientSideAdTracking\":1,\"accessControl\":{\"mvpd\":\"[MVPD_ID]\"},\"plugins\":{\"heartbeat\":{\"marketingCloudId\":\"A8AB776A5245B4220A490D44@AdobeOrg\",\"customTrackingServer\":\"nbcume.sc.omtrdc.net\",\"trackingServer\":\"nbcume.hb.omtrdc.net\",\"account\":\"nbcutvedev, nbcunetworkbu\",\"publisherId\":\"nbc\",\"version\":\"1.5\",\"chapterTracking\":1},\"freewheel\":{\"serverSide\":1,\"networkId\":\"169843\",\"serverURL\":\"http://29773.s.fwmrm.net\",\"videoAssetId\":\"nbc_Live_12345\",\"profileId\":\"169843:nbcu_anvato_web\",\"siteSectionId\":\"nbc_desktop_computer_web_livelinear_ots\",\"companion\":\"slid=300companion&slau=FW%20Video-300x60&ptgt=p&flag=+cmpn&w=300&h=60;\",\"eventType\":\"Network\"},\"conviva\":{\"serviceUrl\":\"https://livepass.conviva.com\",\"clientId\":\"c3.NBC\"},\"omniture\":false},\"debug\":0,\"pInstance\":\"[HTML_ID]\",\"mcp\":\"nbclocal\", \"customUIController\":{\"showUIComponents\":{\"control\":false, \"splash\":false, \"captionSetting\":false, \"preview\":true, \"share\":false}, \"loadAssets\":[{\"type\":\"stylesheet\", \"url\":\"http://w3.cdn.anvato.net/player/stage/nbc/custom-ui/controller.css\"},{\"type\":\"script\", \"url\":\"http://w3.cdn.anvato.net/player/stage/nbc/custom-ui/controller.min.js\"}, {\"type\":\"view\", \"url\":\"http://w3.cdn.anvato.net/player/stage/nbc/custom-ui/custom-controller.html\"}]} }"
+            }
+        },
+        {
+            "name": "ONEAPP_STAGEVODPlayer",
+            "class": "PDK_6",
+            "specificConfig": {
+                "entitlement": "{\"authenticator\":\"adobePass\",\"authorizer\":\"adobePass\",\"requestor\":\"nbcentertainment\",\"resourceId\":\"[VIDEO_ID]\"}",
+                "PlayerType": "PDK_6",
+                "controllerURL": "//player.theplatform.com/pdk/HNK2IC/tpPdkController.js?pdk=5.8.7",
+                "playerURL": "//player.theplatform.com/p/dCK2IC/ZfO1Y3niEpy2/select/media/guid/[MPX_ACCOUNT_ID]/[VIDEO_ID][QUERYSTRING_OPTIONS]",
+                "releaseURL": "//link.theplatform.com/s/HNK2IC/media/guid/[MPX_ACCOUNT_ID]/[VIDEO_ID]",
+                "skipIntroFeatureEnabled": true,
+                "skipIntroConfig": "{\"targetOrigin\":\"[PROTOCOL]//player.theplatform.com\", \"buttonClickedMessage\":{\"type\":\"OpeningCuePoint__clicked\"}, \"setButtonTextMessage\":{\"type\":\"OpeningCuePoint__setHTMLText\", \"data\":\"SKIP INTRO\"}, \"showButtonMessage\":{\"type\":\"OpeningCuePoint__showButton\"}, \"hideButtonMessage\":{\"type\":\"OpeningCuePoint__hideButton\"}}",
+                "metadataSettings": "{\"async\": true,\"crossDomain\": true,\"url\": \"https://stage-access-cloudpath.media.nbcuni.com/access/vod/nbc/@VIDEO_ID@/metadata\",\"type\":\"POST\",\"headers\": {\"authorization\": \"NBC-Referrer key=desktop_nbc_prod,version=3.0\",\"content-type\": \"application/json\",\"accept\": \"application/json\"},\"data\":\"{\\\"device\\\":\\\"desktop\\\"}\"}",
+                "adsModuleFeatureEnabled": true,
+                "adsModuleSettings": "{\"async\": true,\"crossDomain\": true,\"url\": \"https://stage-access-cloudpath.media.nbcuni.com/access/adparams/vod/nbcuniversal\",\"type\":\"POST\",\"headers\": {\"authorization\": \"NBC-Referrer key=desktop_nbcuniversal,version=3.0\",\"content-type\": \"application/json\",\"accept\": \"application/json\"},\"data\":\"{\\\"device\\\":\\\"web\\\",\\\"adobeMvpdId\\\":\\\"@MVPD_ID@\\\",\\\"deviceId\\\":\\\"[GENERATED_GUID]\\\",\\\"mpx\\\":{\\\"accountId\\\":\\\"@MPX_ACCOUNT_ID@\\\"},\\\"externalAdvertiserId\\\":\\\"@EXTERNAL_ADVERTISER_ID@\\\",\\\"serviceZip\\\":\\\"@MVPD_HOMEZIP@\\\",\\\"encryptedZip\\\":\\\"@MVPD_ENCRYPTED_HOMEZIP@\\\",\\\"did\\\":\\\"[GENERATED_GUID]\\\",\\\"uuid\\\":\\\"[MPS_COOKIE_ID]\\\",\\\"mParticleId\\\":\\\"[M_PARTICLE_ID]\\\"}\"}",
+                "options": [
+                    "autoPlay",
+                    "carouselID",
+                    "dfp_300",
+                    "dfp_728",
+                    "disableEndCard",
+                    "endCardSeconds",
+                    "excludeSharing",
+                    "fwautoplay",
+                    "krux_user",
+                    "krux_segment",
+                    "sequenceCompleteStrategy",
+                    "sp",
+                    "station",
+                    "suppressCompanions"
+                ]
+            }
+        }
+    ],
+    "channelsConfig": [
+        {
+            "id": "NBC_STAGE",
+            "title": "NBC_STAGE",
+            "live": {
+                "playerModule": "NBC_STAGELIVEPlayer"
+            }
+        },
+        {
+            "id": "USA_ONEAPP_STAGE",
+            "title": "USA_ONEAPP_STAGE",
+            "live": {
+                "playerModule": "USA_ONEAPP_STAGELIVEPlayer"
+            }
+        },
+        {
+            "id": "SYFY_ONEAPP_STAGE",
+            "title": "SYFY_ONEAPP_STAGE",
+            "live": {
+                "playerModule": "SYFY_ONEAPP_STAGELIVEPlayer"
+            }
+        },
+        {
+            "id": "BRAVO_ONEAPP_STAGE",
+            "title": "BRAVO_ONEAPP_STAGE",
+            "live": {
+                "playerModule": "BRAVO_ONEAPP_STAGELIVEPlayer"
+            }
+        },
+        {
+            "id": "CNBC_ONEAPP_STAGE",
+            "title": "CNBC_ONEAPP_STAGE",
+            "live": {
+                "playerModule": "CNBC_ONEAPP_STAGELIVEPlayer"
+            }
+        },
+        {
+            "id": "E_ONEAPP_STAGE",
+            "title": "E_ONEAPP_STAGE",
+            "live": {
+                "playerModule": "E_ONEAPP_STAGELIVEPlayer"
+            }
+        },
+        {
+            "id": "MSNBC_ONEAPP_STAGE",
+            "title": "MSNBC_ONEAPP_STAGE",
+            "live": {
+                "playerModule": "MSNBC_ONEAPP_STAGELIVEPlayer"
+            }
+        },
+        {
+            "id": "NBCUNIVERSO_ONEAPP_STAGE",
+            "title": "NBCUNIVERSO_ONEAPP_STAGE",
+            "live": {
+                "playerModule": "NBCUNIVERSO_ONEAPP_STAGELIVEPlayer"
+            }
+        },
+        {
+            "id": "OXYGEN_ONEAPP_STAGE",
+            "title": "OXYGEN_ONEAPP_STAGE",
+            "live": {
+                "playerModule": "OXYGEN_ONEAPP_STAGELIVEPlayer"
+            }
+        },
+        {
+            "id": "UNIVERSALKIDS_ONEAPP_STAGE",
+            "title": "UNIVERSALKIDS_ONEAPP_STAGE",
+            "live": {
+                "playerModule": "UNIVERSALKIDS_ONEAPP_STAGELIVEPlayer"
+            }
+        },
+        {
+            "id": "TELEMUNDO_ONEAPP_STAGE",
+            "title": "TELEMUNDO_ONEAPP_STAGE",
+            "live": {
+                "playerModule": "TELEMUNDO_ONEAPP_STAGELIVEPlayer"
+            }
+        },
+        {
+            "id": "ONEAPP_STAGE",
+            "title": "ONEAPP_STAGE",
+            "vod": {
+                "playerModule": "ONEAPP_STAGEVODPlayer"
+            }
+        }
+    ]
+}
