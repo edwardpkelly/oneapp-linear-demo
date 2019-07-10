@@ -1,5 +1,4 @@
-import bootstrap from 'bootstrap';
-import App from './App';
+import App from './js/App';
 import { log } from './js/utils/log';
 
 import './css/app.css';
@@ -9,4 +8,3 @@ const run = () => {
     log('this is a test!');
 };
 run();
-
