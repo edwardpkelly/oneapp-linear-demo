@@ -10,7 +10,7 @@ function loadNBC() {
 
 function loadUSA() {
     var contentInitObj = new NBCUniCPC.ContentInitializationObject();
-    var params = { "callsign": "bravowest", "autoPlay": true, "mParticleId": "595844347038223836", "appSessionId": "8A56A219-FD69-49A2-9D3B-42DF28887F84", "pageAppVersion": "1.133.33" };
+    var params = { "autoPlay": true, "mParticleId": "595844347038223836", "appSessionId": "8A56A219-FD69-49A2-9D3B-42DF28887F84", "pageAppVersion": "1.133.33" };
     params.mvpdId = selectedMvpdId;
     contentInitObj.videoId = "LIVE";
     NBCUniCPC.controller.updateLiveEvent("videoplayer", NBCUniCPC.Account.USA_ONEAPP_STAGE, contentInitObj, params);
@@ -52,7 +52,6 @@ function loadE() {
     var contentInitObj = new NBCUniCPC.ContentInitializationObject();
     var params = { "autoPlay": true, "mParticleId": "595844347038223836", "appSessionId": "8A56A219-FD69-49A2-9D3B-42DF28887F84", "pageAppVersion": "1.133.33" };
     params.mvpdId = selectedMvpdId;
-    params.callsign = 'e!east'
     contentInitObj.videoId = "LIVE";
     NBCUniCPC.controller.updateLiveEvent("videoplayer", NBCUniCPC.Account.E_ONEAPP_STAGE, contentInitObj, params);
     smoothScroll();

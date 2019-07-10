@@ -1,3 +1,4 @@
+import bootstrap from 'bootstrap';
 import App from './App';
 import { log } from './js/utils/log';
 

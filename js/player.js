@@ -20,7 +20,7 @@ function onConfigLoaded(evt) {
     var parameters = new NBCUniCPC.PlayerParameters();
     parameters.autoPlay = false;
     parameters.mvpdId = selectedMvpdId;
-    parameters.callsign = "syfyeast";
+    parameters.callsign = "usawest";
 
     cpcplayer = NBCUniCPC.controller.loadEvent("videoplayer", NBCUniCPC.Account[DEFAULT_BRAND.config], contentInitObj, parameters);
     cpcplayer.addEventListener(NBCUniCPC.Event.PLAYBACK_READY, onReady);
