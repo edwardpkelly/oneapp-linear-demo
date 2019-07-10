@@ -1,3 +1,6 @@
+# dist directory and artifacts
+dist/
+
 # Logs
 logs
 *.log
