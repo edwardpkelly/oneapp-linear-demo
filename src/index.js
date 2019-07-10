@@ -1,7 +1,8 @@
 import App from './App';
 import { log } from './js/utils/log';
 
-import styles from './css/app.css';
+import './css/app.css';
+import './css/bootstrap.scss';
 
 const run = () => {
     log('this is a test!');
