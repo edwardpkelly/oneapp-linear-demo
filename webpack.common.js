@@ -1,9 +1,10 @@
 const path = require("path");
+const webpack = require("webpack");
 
 module.exports = {
     entry: {
-        main: "./src/index.js",
-        vendor: "./src/vendor.js"
+        main: "./src/js/index.js",
+        vendor: "./src/js/vendor.js"
     },
     module: {
         rules: [
@@ -15,5 +16,12 @@ module.exports = {
                 }
             }
         ]
-    }
+    },
+    plugins: [
+        new webpack.ProvidePlugin({
+            jQuery: "jquery",
+            $: "jquery",
+            jquery: "jquery"
+        })
+    ]
 };
