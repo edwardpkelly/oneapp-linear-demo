@@ -12,8 +12,159 @@
     <script type="text/javascript" src="//entitlement.auth.adobe.com/entitlement/AccessEnabler.js"></script>
 </head>
 
-<body>
-    <div id="app"></div>
+<body class="d-flex flex-column h-100">
+    <header>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#">CloudPath OneApp Linear Example</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://dev-cloudpath.nbcuni.com/head/api/docs/public/index.html"
+                            target="_blank">CPC Documentation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                            href="http://dev-cloudpath.nbcuni.com/head/api/docs/public/tutorial-Entitlement%20using%20Full%20Page%20Level%20Authorization.html"
+                            target="_blank">CPC Auth Tutorial</a>
+                    </li>
+                </ul>
+                <div id="auth-control">
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Begin page content -->
+    <main role="main" id="main-content">
+        <!-- Adobe Pass  -->
+        <div id="contentAccessEnabler" style="display: none;"></div>
+        <div id="mvpddiv" style="display:none">
+            <p>
+                <strong>No login window?</strong>
+                <br />
+                <a href="javascript:mvpdWindow.focus();">Click here to open it.</a>
+                <br />
+                Still not working? Check popup blockers!
+            </p>
+        </div>
+        <!-- End Adobe Pass -->
+        <div class="jumbotron">
+            <div class="container">
+                <h3 class="display-6" id="watching-header">Now Watching: CNBC</h3>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div id="playerContainer">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container cards-container">
+            <div class="row">
+                <div id="channels">
+
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card mb-4 shadow-sm">
+                        <img class="card-img-top" src="images/bravo_tv.png" alt="Bravo">
+                        <div class="card-body">
+                            <button id="watch-bravo-west-btn" onclick="loadBravo(CALLSIGN_CONSTANTS.WEST);"
+                                type="button" class="btn btn-lg btn-block btn-primary btn-watch-now">Sign-in to
+                                Watch</button>
+                            <button id="watch-bravo-east-btn" onclick="loadBravo(CALLSIGN_CONSTANTS.EAST);"
+                                type="button" class="btn btn-lg btn-block btn-primary btn-watch-now">Sign-in to
+                                Watch</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card mb-4 shadow-sm">
+                        <img class="card-img-top" src="images/cnbc_logo.gif" alt="CNBC">
+                        <div class="card-body">
+                            <button id="watch-cnbc-btn" onclick="loadCNBC();" type="button"
+                                class="btn btn-lg btn-block btn-primary btn-watch-now">Sign-in to Watch</button>
+                            <button type="button"
+                                class="btn btn-lg btn-block btn-primary btn-watch-now btn-placeholder">Sign-in to
+                                Watch</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card mb-4 shadow-sm">
+                        <img class="card-img-top" src="images/e_new_logo_h.jpg" alt="E!">
+                        <div class="card-body">
+                            <button id="watch-e-btn" onclick="loadE();" type="button"
+                                class="btn btn-lg btn-block btn-primary btn-watch-now">Sign-in to Watch</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card mb-4 shadow-sm">
+                        <img class="card-img-top" src="images/MSNBC_logo.png" alt="MSNBC">
+                        <div class="card-body">
+                            <button id="watch-msnbc-btn" onclick="loadMSNBC();" type="button"
+                                class="btn btn-lg btn-block btn-primary btn-watch-now">Sign-in to Watch</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card mb-4 shadow-sm">
+                        <img class="card-img-top" src="images/nbc-logo.jpg" alt="NBC">
+                        <div class="card-body">
+                            <button id="watch-nbc-btn" onclick="loadNBC();" type="button"
+                                class="btn btn-lg btn-block btn-primary btn-watch-now">Sign-in to Watch</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card mb-4 shadow-sm">
+                        <img class="card-img-top" src="images/nbc-universo-logo.jpg" alt="Universo">
+                        <div class="card-body">
+                            <button id="watch-nbcuniverso-btn" onclick="loadUniverso();" type="button"
+                                class="btn btn-lg btn-block btn-primary btn-watch-now">Sign-in to Watch</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card mb-4 shadow-sm">
+                        <img class="card-img-top" src="images/oxygen-logo.jpg" alt="Oxygen">
+                        <div class="card-body">
+                            <button id="watch-oxygen-btn" onclick="loadOxygen();" type="button"
+                                class="btn btn-lg btn-block btn-primary btn-watch-now">Sign-in to Watch</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card mb-4 shadow-sm">
+                        <img class="card-img-top" src="images/syfy.jpg" alt="Syfy">
+                        <div class="card-body">
+                            <button id="watch-syfy-btn" onclick="loadSyfy();" type="button"
+                                class="btn btn-lg btn-block btn-primary btn-watch-now">Sign-in to Watch</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card mb-4 shadow-sm">
+                        <img class="card-img-top" src="images/USA_Network_logo.png" alt="USA">
+                        <div class="card-body">
+                            <button id="watch-usa-btn" onclick="loadUSA();" type="button"
+                                class="btn btn-lg btn-block btn-primary btn-watch-now">Sign-in to Watch</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
+
+    <div id="footer"></div>
 </body>
 
 </html>

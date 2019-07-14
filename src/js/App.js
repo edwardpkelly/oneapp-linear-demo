@@ -1,9 +1,22 @@
 import React from 'react';
+import VideoPlayer from './components/VideoPlayer';
+import AuthControl from './components/AuthControl';
+import Footer from './components/Footer';
 
-const App = () => {
-    return (
-        <div><h1>React App.js Here!!</h1></div>
-    );
+const AuthControlComponent = () => {
+    return <AuthControl />;
 };
 
-export default App;
+const VideoPlayerComponent = () => {
+    return <VideoPlayer />;
+};
+
+const FooterComponent = () => {
+    return <Footer />;
+};
+
+export {
+    AuthControlComponent,
+    VideoPlayerComponent,
+    FooterComponent
+}

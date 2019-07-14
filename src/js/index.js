@@ -1,21 +1,22 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-
-import App from './App';
 import { store } from './state/store/store';
-import findBrandData from './utils/findBrandData';
 
 import '../css/app.css';
 import '../css/bootstrap.scss';
 
+import findBrandData from './utils/findBrandData';
+import { 
+    AuthControlComponent,
+    VideoPlayerComponent,
+    FooterComponent
+    } from './app';
+
 const storeInstance = store;
 
-
 (() => {
-    //let DEFAULT_BRAND;
     window.DEFAULT_BRAND = findBrandData('nbc');
-    console.log(DEFAULT_BRAND);
     let params = new URLSearchParams(window.location.search);
     if (params.get('brand') && findBrandData(params.get('brand'))) {
         DEFAULT_BRAND = findBrandData(params.get('brand'));
@@ -25,9 +26,23 @@ const storeInstance = store;
 const renderApp = () => {
     render(
         <Provider store={storeInstance}>
-            <App />
+            <AuthControlComponent />
         </Provider>,
-        document.getElementById('app')
+        document.getElementById('auth-control')
+    );
+
+    render(
+        <Provider store={storeInstance}>
+            <VideoPlayerComponent />
+        </Provider>,
+        document.getElementById('playerContainer')
+    );
+
+    render(
+        <Provider store={storeInstance}>
+            <FooterComponent />
+        </Provider>,
+        document.getElementById('footer')
     );
 };
 

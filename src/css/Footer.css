@@ -1,0 +1,20 @@
+.Footer {
+    background-color: #f5f5f5;
+}
+
+.Footer>.container {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.adobe-pass-failue {
+    background-color: #ffcccc !important;
+}
+
+.adobe-pass-success {
+    background-color: #c2f0c2;
+}
+
+.adobe-pass-warning {
+    background-color: #ffeb99;
+}
