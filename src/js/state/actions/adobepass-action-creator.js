@@ -13,12 +13,6 @@ const adobePassActionCreator = store => {
     $(document).on(AuthConstants.ENTITLEMENT_LOADED, handleAuthEvents);
 };
 
-window.entitlementLoaded = () => {
-    // kicks off entitlement flow
-    accessEnabler.setRequestor(window.DEFAULT_BRAND.requestor, null);
-    $(document).trigger(AuthConstants.ENTITLEMENT_LOADED);
-};
-
 export {
     adobePassActionCreator
 };
