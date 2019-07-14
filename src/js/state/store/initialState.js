@@ -1,7 +1,9 @@
 const defaultState = {
     auth: {
         entitlementLoaded: false,
-        auth: false
+        auth: false,
+        selectedMvpdId: null,
+        authenticatedMvpdId: null
     }
 };
 

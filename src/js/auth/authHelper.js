@@ -1,4 +1,5 @@
 import AuthConstants from '../constants/auth-constants';
+import UserConstants from '../constants/user-constants';
 import log from '../utils/log';
 
 const authHelper = (windowObj) => {
@@ -7,6 +8,11 @@ const authHelper = (windowObj) => {
         accessEnabler.setRequestor(window.DEFAULT_BRAND.requestor, null);
         $(document).trigger(AuthConstants.ENTITLEMENT_LOADED);
     };
+
+    $(document).on(UserConstants.AUTH_BTN_SELECTED, (data) => {
+        const { mvpd } = data;
+        accessEnabler.setSelectedProvider(mvpd);
+    });
 
     const MVPD_IFRAME_CONTAINER_ID = "mvpddiv";
     const MVPD_IFRAME_ID = "mvpdframe";
