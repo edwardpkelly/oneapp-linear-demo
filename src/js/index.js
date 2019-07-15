@@ -7,6 +7,7 @@ import '../css/app.css';
 import '../css/bootstrap.scss';
 import { configureAuthHelper } from './auth/authHelper';
 
+
 (() => {
     const windowObj = window || {};
     windowObj.DEFAULT_BRAND = findBrandData('nbc');

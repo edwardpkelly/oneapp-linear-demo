@@ -25,9 +25,8 @@ const authHelper = (windowObj) => {
      */
     windowObj.displayProviderDialog = (providers) => {
         log("displayProviderDialog::providers:" + JSON.stringify(providers));
-        
-        // TODO
-        //updateAuthForm(authParams.NOT_AUTHENTICATED);
+
+        $(document).trigger({type: AuthConstants.ON_AUTHENTICATION_STATUS, auth: false});
     };
 
     /* *
@@ -97,19 +96,23 @@ const authHelper = (windowObj) => {
      * current REQUESTOR including the MVPD list.
      */
     windowObj.setConfig = (configXML) => {
-        $('#mvpd-select').find('option').remove().end().append('<option value="nothing">Select your provider</option>');
         let mvpdList = [];
         $.each($($.parseXML(configXML)).find('mvpd'), (idx, item) => {
-            const mvpdId = $(item).find('id').text();
-            mvpdList[mvpdId] = {
+            let mvpdItem = {
+                mvpdId: $(item).find('id').text(),
                 displayName: $(item).find('displayName').text(),
                 logo: $(item).find('logoUrl').text(),
                 popup: $(item).find('iFrameRequired').text() == "true",
                 width: $(item).find('iFrameWidth').text(),
                 height: $(item).find('iFrameHeight').text()
             };
-            $('#mvpd-select').append($('<option value="' + mvpdId + '" title="' + mvpdId + '">' + mvpdList[mvpdId].displayName + '</option>'));
+            mvpdList.push(mvpdItem);
         });
+        // for dev only. Comment line below for Production
+        mvpdList = mvpdList.slice(375, 380);
+        
+        $(document).trigger({ type: AuthConstants.ON_SET_CONFIG, mvpdList });
+
         accessEnabler.getAuthentication();
     };
 

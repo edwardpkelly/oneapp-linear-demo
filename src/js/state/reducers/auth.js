@@ -8,6 +8,20 @@ const auth = (state = {}, action) => {
                 ...state,
                 entitlementLoaded: true
             }
+
+        case AuthConstants.ON_AUTHENTICATION_STATUS :
+            const { data: auth } = action;
+            return {
+                ...state,
+                userAuthenticated: auth
+            }
+        case AuthConstants.ON_SET_CONFIG : 
+            const { data } = action;
+            const obj = {
+                ...state,
+                mvpdList: data
+            }
+            return obj;
         
         case UserConstants.AUTH_BTN_SELECTED :{
             const { mvpd } = action.data;

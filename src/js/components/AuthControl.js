@@ -8,12 +8,18 @@ import {
 
 const AuthControl = props => {
 
-    const { 
-        authButtonSelected, 
-        selectedMvpdId, 
-        authenticatedMvpdId,
-        selectedMvdUpdated } = props;
-        
+    const {
+        auth,
+        authButtonSelected,
+        selectedMvdUpdated
+    } = props;
+
+    const {
+        mvpdList,
+        selectedMvpdId,
+        authenticatedMvpdId
+    } = auth;
+
     let selectedMvpd;
 
     const handleAuthClick = () => {
@@ -29,8 +35,18 @@ const AuthControl = props => {
     return (
         <Fragment>
             <select className="form-control mr-sm-3" id="mvpd-select" onChange={(event) => onUpdateSelection(event)}>
-                <option value="nothing">Select your provider</option>
-                <option value="nothing">Waiting for list ...</option>
+                {
+                    !mvpdList.length ?
+                        <option key="002" value="nothing">Waiting for list ...</option>
+                        : null
+                }
+                <option key="001" value="nothing">Select your provider...</option>
+                {
+                    mvpdList.map(item => {
+                        return <option key={item.mvpdId} value={item.mvpdId} title={item.mvpdId}>{item.displayName}</option>
+                    })
+                }
+        }
             </select>
             <button className="btn btn-outline-warning my-2 my-sm-0" onClick={handleAuthClick} id="toggle-auth-btn">Login</button>
         </Fragment>
@@ -45,5 +61,9 @@ const mapDispatchToProps = {
 const mapStateToProps = state => ({
     auth: state.auth
 });
+
+AuthControl.defaultProps = {
+    auth: {}
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(AuthControl);

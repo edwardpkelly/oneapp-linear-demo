@@ -1,9 +1,10 @@
 const defaultState = {
     auth: {
+        authenticatedMvpdId: null,
+        userAuthenticated: null,
         entitlementLoaded: false,
-        auth: false,
+        mvpdList: [],
         selectedMvpdId: null,
-        authenticatedMvpdId: null
     }
 };
 
