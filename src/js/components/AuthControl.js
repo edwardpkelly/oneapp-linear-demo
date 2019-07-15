@@ -29,11 +29,6 @@ const AuthControl = props => {
         selectedMvdUpdated({ mvpd: selectedMvpd });
     };
 
-    //$('#mvpd-select').val(selectedMvpdId);
-    //$('#mvpd-select').attr('disabled', true);
-    //$('#toggle-auth-btn').html('Logout');
-    //$('#toggle-auth-btn').toggleClass('btn-outline-warning', false);
-    //$('#toggle-auth-btn').toggleClass('btn-danger', true);
     let btnClass = 'btn my-2 my-sm-0 ';
     if (authenticatedMvpdId) {
         btnClass += 'btn-danger';
