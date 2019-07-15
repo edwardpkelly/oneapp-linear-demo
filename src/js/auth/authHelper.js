@@ -26,7 +26,7 @@ const authHelper = (windowObj) => {
     windowObj.displayProviderDialog = (providers) => {
         log("displayProviderDialog::providers:" + JSON.stringify(providers));
 
-        $(document).trigger({type: AuthConstants.ON_AUTHENTICATION_STATUS, auth: false});
+        $(document).trigger({type: AuthConstants.ON_AUTHENTICATION_STATUS, auth: AuthConstants.NOT_AUTHENTICATED});
     };
 
     /* *
@@ -39,12 +39,12 @@ const authHelper = (windowObj) => {
     windowObj.setToken = (resource, token) => {
         log("setToken::resource:" + JSON.stringify(resource));
         log("setToken::token:" + JSON.stringify(token));
-        encodedAuthorizationToken = encodeURIComponent(token);
+        windowObj.encodedAuthorizationToken = encodeURIComponent(token);
 
         // load the player only once
-        if (!playerInited) {
-            loadPlayer(); // load the player now that the user has authorization
-        }
+        // if (!playerInited) {
+        //     loadPlayer(); // load the player now that the user has authorization
+        // }
     };
 
     /* *
@@ -71,7 +71,13 @@ const authHelper = (windowObj) => {
     windowObj.setAuthenticationStatus = (isAuthenticated, errorCode) => {
         log("setAuthenticationStatus::isAuthenticated:" + JSON.stringify(isAuthenticated));
         log("setAuthenticationStatus::errorCode:" + JSON.stringify(errorCode));
-        updateAuthForm((isAuthenticated) ? authParams.AUTHENTICATED : authParams.NOT_AUTHENTICATED);
+
+        let status = AuthConstants.AUTHENTICATED;
+        if (!isAuthenticated) {
+            status = AuthConstants.NOT_AUTHENTICATED;
+        }
+        $(document).trigger({type: AuthConstants.ON_AUTHENTICATION_STATUS, auth: status});
+        
         if (isAuthenticated) {
             const mrss = "<rss version=\"2.0\" xmlns:media=\"http://search.yahoo.com/mrss/\"><channel><title>" + authRequestorId + "</title><item><title><![CDATA[<?php echo $TITLE ?>]]></title><guid><?php echo $GUID; ?></guid><media:rating scheme=\"urn:v-chip\"><?php echo $RATING; ?></media:rating></item></channel></rss>";
             accessEnabler.getSelectedProvider();
@@ -208,13 +214,16 @@ const authHelper = (windowObj) => {
      * - AE_State The result of authentication for the current customer, one of "New User", "User Not Authenticated", or "User Authenticated
      */
     windowObj.selectedProvider = result => {
+        windowObj.selectedMvpdId = result.MVPD;
+        
+        $(document).trigger({type: AuthConstants.ON_SET_SELECTED_PROVIDER, mvpd: selectedMvpdId});
+
         log("selectedProvider::result:" + JSON.stringify(result));
-        selectedMvpdId = result.MVPD;
-        $('#mvpd-select').val(selectedMvpdId);
-        $('#mvpd-select').attr('disabled', true);
-        $('#toggle-auth-btn').html('Logout');
-        $('#toggle-auth-btn').toggleClass('btn-outline-warning', false);
-        $('#toggle-auth-btn').toggleClass('btn-danger', true);
+        //$('#mvpd-select').val(selectedMvpdId);
+        //$('#mvpd-select').attr('disabled', true);
+        //$('#toggle-auth-btn').html('Logout');
+        //$('#toggle-auth-btn').toggleClass('btn-outline-warning', false);
+        //$('#toggle-auth-btn').toggleClass('btn-danger', true);
     }
 
     /* *

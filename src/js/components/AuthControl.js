@@ -16,25 +16,38 @@ const AuthControl = props => {
 
     const {
         mvpdList,
-        selectedMvpdId,
         authenticatedMvpdId
     } = auth;
 
-    let selectedMvpd;
-
     const handleAuthClick = () => {
-        if (selectedMvpd === 'nothing') return;
-        authButtonSelected({ mvpd: selectedMvpd });
+        authButtonSelected();
     };
 
     const onUpdateSelection = (event) => {
-        selectedMvpd = event.target.value;
+        const selectedMvpd = event.target.value;
+        if (selectedMvpd === 'nothing') return;
         selectedMvdUpdated({ mvpd: selectedMvpd });
     };
 
+    //$('#mvpd-select').val(selectedMvpdId);
+    //$('#mvpd-select').attr('disabled', true);
+    //$('#toggle-auth-btn').html('Logout');
+    //$('#toggle-auth-btn').toggleClass('btn-outline-warning', false);
+    //$('#toggle-auth-btn').toggleClass('btn-danger', true);
+    let btnClass = 'btn my-2 my-sm-0 ';
+    if (authenticatedMvpdId) {
+        btnClass += 'btn-danger';
+    } else {
+        btnClass += 'btn-outline-warning';
+    }
+
     return (
         <Fragment>
-            <select className="form-control mr-sm-3" id="mvpd-select" onChange={(event) => onUpdateSelection(event)}>
+            <select 
+                value={authenticatedMvpdId} 
+                className="form-control mr-sm-3" 
+                onChange={(event) => onUpdateSelection(event)}
+            >
                 {
                     !mvpdList.length ?
                         <option key="002" value="nothing">Waiting for list ...</option>
@@ -43,12 +56,26 @@ const AuthControl = props => {
                 <option key="001" value="nothing">Select your provider...</option>
                 {
                     mvpdList.map(item => {
-                        return <option key={item.mvpdId} value={item.mvpdId} title={item.mvpdId}>{item.displayName}</option>
+                        return (
+                            <option
+                                key={item.mvpdId} 
+                                value={item.mvpdId} 
+                                title={item.mvpdId}
+                            >
+                                {item.displayName}
+                            </option>
+                        )
                     })
                 }
-        }
+                }
             </select>
-            <button className="btn btn-outline-warning my-2 my-sm-0" onClick={handleAuthClick} id="toggle-auth-btn">Login</button>
+            <button 
+                className={btnClass} 
+                onClick={handleAuthClick} 
+                id="toggle-auth-btn"
+                >
+                    { authenticatedMvpdId ? 'Logout' : 'Login' }
+                </button>
         </Fragment>
     );
 }

@@ -1,5 +1,10 @@
 import AuthConstants from '../../constants/auth-constants';
-import { onEntitlementLoaded, onSetConfig, onAuthenticationStatus } from './adobepass-actions';
+import { 
+    onEntitlementLoaded, 
+    onSetConfig, 
+    onAuthenticationStatus,
+    onSetSelectedProvider 
+} from './adobepass-actions';
 
 const adobePassActionCreator = store => {
     const handleAuthEvents = event => {
@@ -17,12 +22,18 @@ const adobePassActionCreator = store => {
                 store.dispatch(onSetConfig(mvpdList));
                 break;
             }
+
+            case AuthConstants.ON_SET_SELECTED_PROVIDER : {
+                const { mvpd } = event;
+                store.dispatch(onSetSelectedProvider({ mvpd }));
+            }
         }
     };
 
     $(document).on(AuthConstants.ON_AUTHENTICATION_STATUS, handleAuthEvents);
     $(document).on(AuthConstants.ENTITLEMENT_LOADED, handleAuthEvents);
     $(document).on(AuthConstants.ON_SET_CONFIG, handleAuthEvents);
+    $(document).on(AuthConstants.ON_SET_SELECTED_PROVIDER, handleAuthEvents);
 };
 
 export {

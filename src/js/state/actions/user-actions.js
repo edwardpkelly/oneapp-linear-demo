@@ -1,8 +1,7 @@
 import UserConstants from '../../constants/user-constants';
 
-export const authButtonSelected = (data) => ({
-    type: UserConstants.AUTH_BTN_SELECTED,
-    data
+export const authButtonSelected = () => ({
+    type: UserConstants.AUTH_BTN_SELECTED
 });
 
 export const selectedMvdUpdated = (data) => ({

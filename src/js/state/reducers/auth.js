@@ -15,19 +15,21 @@ const auth = (state = {}, action) => {
                 ...state,
                 userAuthenticated: auth
             }
-        case AuthConstants.ON_SET_CONFIG : 
+        case AuthConstants.ON_SET_CONFIG : {
             const { data } = action;
             const obj = {
                 ...state,
                 mvpdList: data
             }
             return obj;
-        
-        case UserConstants.AUTH_BTN_SELECTED :{
-            const { mvpd } = action.data;
+        }
+
+        case AuthConstants.ON_SET_SELECTED_PROVIDER : {
+            const { data } = action;
+            const { mvpd } = data;
             return {
                 ...state,
-                selectedMvpdId: mvpd
+                authenticatedMvpdId: mvpd
             }
         }
 

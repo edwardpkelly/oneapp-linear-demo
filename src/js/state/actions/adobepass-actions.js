@@ -14,3 +14,8 @@ export const onSetConfig = data => ({
     type: AuthConstants.ON_SET_CONFIG,
     data
 });
+
+export const onSetSelectedProvider = (data) => ({
+    type: AuthConstants.ON_SET_SELECTED_PROVIDER,
+    data
+});
