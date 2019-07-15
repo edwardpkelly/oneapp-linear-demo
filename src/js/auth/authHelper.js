@@ -4,7 +4,7 @@ import log from '../utils/log';
 
 const authHelper = (windowObj) => {
     const MVPD_IFRAME_CONTAINER_ID = "mvpddiv";
-    const MVPD_IFRAME_ID = "mvpdframe"; 
+    const MVPD_IFRAME_ID = "mvpdframe";
     const authRequestorId = windowObj.DEFAULT_BRAND.requestor;
     let authStatus = AuthConstants.NOT_AUTHENTICATED;
 
@@ -32,7 +32,7 @@ const authHelper = (windowObj) => {
     windowObj.displayProviderDialog = (providers) => {
         log("displayProviderDialog::providers:" + JSON.stringify(providers));
 
-        $(document).trigger({type: AuthConstants.ON_AUTHENTICATION_STATUS, auth: AuthConstants.NOT_AUTHENTICATED});
+        $(document).trigger({ type: AuthConstants.ON_AUTHENTICATION_STATUS, auth: AuthConstants.NOT_AUTHENTICATED });
     };
 
     /* *
@@ -47,10 +47,7 @@ const authHelper = (windowObj) => {
         log("setToken::token:" + JSON.stringify(token));
         windowObj.encodedAuthorizationToken = encodeURIComponent(token);
 
-        // load the player only once
-        // if (!playerInited) {
-        //     loadPlayer(); // load the player now that the user has authorization
-        // }
+        $(document).trigger(AuthConstants.ON_SET_TOKEN);
     };
 
     /* *
@@ -82,8 +79,8 @@ const authHelper = (windowObj) => {
         if (!isAuthenticated) {
             status = AuthConstants.NOT_AUTHENTICATED;
         }
-        $(document).trigger({type: AuthConstants.ON_AUTHENTICATION_STATUS, auth: status});
-        
+        $(document).trigger({ type: AuthConstants.ON_AUTHENTICATION_STATUS, auth: status });
+
         if (isAuthenticated) {
             authStatus = AuthConstants.AUTHENTICATED;
             const mrss = "<rss version=\"2.0\" xmlns:media=\"http://search.yahoo.com/mrss/\"><channel><title>" + authRequestorId + "</title><item><title><![CDATA[<?php echo $TITLE ?>]]></title><guid><?php echo $GUID; ?></guid><media:rating scheme=\"urn:v-chip\"><?php echo $RATING; ?></media:rating></item></channel></rss>";
@@ -124,7 +121,7 @@ const authHelper = (windowObj) => {
         });
         // for dev only. Comment line below for Production
         mvpdList = mvpdList.slice(375, 380);
-        
+
         $(document).trigger({ type: AuthConstants.ON_SET_CONFIG, mvpdList });
 
         accessEnabler.getAuthentication();
@@ -223,8 +220,8 @@ const authHelper = (windowObj) => {
      */
     windowObj.selectedProvider = result => {
         windowObj.selectedMvpdId = result.MVPD;
-        
-        $(document).trigger({type: AuthConstants.ON_SET_SELECTED_PROVIDER, mvpd: selectedMvpdId});
+
+        $(document).trigger({ type: AuthConstants.ON_SET_SELECTED_PROVIDER, mvpd: selectedMvpdId });
 
         log("selectedProvider::result:" + JSON.stringify(result));
         //$('#mvpd-select').val(selectedMvpdId);

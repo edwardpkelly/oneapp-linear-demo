@@ -5,8 +5,16 @@ import { store } from './state/store/store';
 
 import '../css/app.css';
 import '../css/bootstrap.scss';
+import { loadPlayer } from './player/player';
+import AuthConstants from './constants/auth-constants';
 import { configureAuthHelper } from './auth/authHelper';
 
+import findBrandData from './utils/findBrandData';
+import { 
+    AuthControlComponent,
+    VideoPlayerComponent,
+    FooterComponent
+} from './app';
 
 (() => {
     const windowObj = window || {};
@@ -18,16 +26,11 @@ import { configureAuthHelper } from './auth/authHelper';
     configureAuthHelper();
 })();
 
-
-import findBrandData from './utils/findBrandData';
-import { 
-    AuthControlComponent,
-    VideoPlayerComponent,
-    FooterComponent
-    } from './app';
+$(document).on(AuthConstants.ON_SET_TOKEN, (event) => {
+    loadPlayer();
+});
 
 const storeInstance = store;
-
 const renderApp = () => {
     render(
         <Provider store={storeInstance}>

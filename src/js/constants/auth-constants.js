@@ -3,6 +3,7 @@ const AuthConstants = {
     ON_AUTHENTICATION_STATUS: 'onAuthenticationStatus',
     ON_SET_CONFIG: 'onSetConfig',
     ON_SET_SELECTED_PROVIDER: 'onSetSelectedProvider',
+    ON_SET_TOKEN: 'onSetToken',
 
     // status strings
     AUTHENTICATED: 'authenticated',

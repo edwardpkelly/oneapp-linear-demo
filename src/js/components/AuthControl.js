@@ -39,7 +39,7 @@ const AuthControl = props => {
     return (
         <Fragment>
             <select 
-                value={authenticatedMvpdId} 
+                value={authenticatedMvpdId ? authenticatedMvpdId : ''} 
                 disabled={authenticatedMvpdId !== null}
                 className="form-control mr-sm-3" 
                 onChange={(event) => onUpdateSelection(event)}
