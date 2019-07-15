@@ -5,6 +5,9 @@ const defaultState = {
         entitlementLoaded: false,
         mvpdList: [],
         selectedMvpdId: null,
+    },
+    media: {
+        mediaItems: []
     }
 };
 
