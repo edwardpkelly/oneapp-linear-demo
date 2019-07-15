@@ -1,9 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {
-    onAuthenticationStatus
-} from '../state/actions/adobepass-actions';
-
 import '../../css/Footer.css';
 
 const Footer = (props) => {
