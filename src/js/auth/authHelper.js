@@ -3,6 +3,11 @@ import UserConstants from '../constants/user-constants';
 import log from '../utils/log';
 
 const authHelper = (windowObj) => {
+    const MVPD_IFRAME_CONTAINER_ID = "mvpddiv";
+    const MVPD_IFRAME_ID = "mvpdframe"; 
+    const authRequestorId = windowObj.DEFAULT_BRAND.requestor;
+    let authStatus = AuthConstants.NOT_AUTHENTICATED;
+
     windowObj.entitlementLoaded = () => {
         // kicks off entitlement flow
         accessEnabler.setRequestor(window.DEFAULT_BRAND.requestor, null);
@@ -10,13 +15,14 @@ const authHelper = (windowObj) => {
     };
 
     $(document).on(UserConstants.AUTH_BTN_SELECTED, (data) => {
-        const { mvpd } = data;
-        accessEnabler.setSelectedProvider(mvpd);
+        if (authStatus === AuthConstants.AUTHENTICATED) {
+            logoutAdobePass();
+        } else {
+            const { mvpd } = data;
+            accessEnabler.setSelectedProvider(mvpd);
+        }
     });
 
-    const MVPD_IFRAME_CONTAINER_ID = "mvpddiv";
-    const MVPD_IFRAME_ID = "mvpdframe";
-    const authRequestorId = windowObj.DEFAULT_BRAND.requestor;
 
     /* *
      * Triggered by: setProviderDialogURL(), getAuthentication(), getAuthorization()
@@ -79,11 +85,13 @@ const authHelper = (windowObj) => {
         $(document).trigger({type: AuthConstants.ON_AUTHENTICATION_STATUS, auth: status});
         
         if (isAuthenticated) {
+            authStatus = AuthConstants.AUTHENTICATED;
             const mrss = "<rss version=\"2.0\" xmlns:media=\"http://search.yahoo.com/mrss/\"><channel><title>" + authRequestorId + "</title><item><title><![CDATA[<?php echo $TITLE ?>]]></title><guid><?php echo $GUID; ?></guid><media:rating scheme=\"urn:v-chip\"><?php echo $RATING; ?></media:rating></item></channel></rss>";
             accessEnabler.getSelectedProvider();
             accessEnabler.getAuthorization(mrss, null);
         } else {
             log("User is not authenticated");
+            authStatus = AuthConstants.NOT_AUTHENTICATED;
         }
     };
 
@@ -258,6 +266,11 @@ const authHelper = (windowObj) => {
 
         document.addEventListener('click', outsideClickListener)
     }
+
+    function logoutAdobePass() {
+        accessEnabler.logout();
+        if (windowObj.location) windowObj.location.reload();
+    };
 
 
     // https://stackoverflow.com/a/10415599

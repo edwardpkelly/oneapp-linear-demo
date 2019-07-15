@@ -29,7 +29,8 @@ const auth = (state = {}, action) => {
             const { mvpd } = data;
             return {
                 ...state,
-                authenticatedMvpdId: mvpd
+                authenticatedMvpdId: mvpd,
+                selectedMvpdId: mvpd
             }
         }
 
