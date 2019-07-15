@@ -21,10 +21,6 @@ const configureStore = () => {
     );
     adobePassActionCreator(store);
 
-    // window.getState = () => {
-    //     return store.getState();
-    // }
-    
     return store;
 };
 

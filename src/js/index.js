@@ -1,7 +1,5 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Provider } from 'react-redux';
-import { store } from './state/store/store';
 
 import '../css/app.css';
 import '../css/bootstrap.scss';
@@ -13,6 +11,7 @@ import findBrandData from './utils/findBrandData';
 import { 
     AuthControlComponent,
     VideoPlayerComponent,
+    MediaGridComponent,
     FooterComponent
 } from './app';
 
@@ -30,26 +29,24 @@ $(document).on(AuthConstants.ON_SET_TOKEN, (event) => {
     loadPlayer();
 });
 
-const storeInstance = store;
 const renderApp = () => {
     render(
-        <Provider store={storeInstance}>
-            <AuthControlComponent />
-        </Provider>,
+        <AuthControlComponent />,
         document.getElementById('auth-control')
     );
 
     render(
-        <Provider store={storeInstance}>
-            <VideoPlayerComponent />
-        </Provider>,
+        <VideoPlayerComponent />,
         document.getElementById('playerContainer')
     );
 
     render(
-        <Provider store={storeInstance}>
-            <FooterComponent />
-        </Provider>,
+        <MediaGridComponent />,
+        document.getElementById('channels')
+    );
+
+    render(
+        <FooterComponent />,
         document.getElementById('footer')
     );
 };
