@@ -1,3 +1,4 @@
+import mediaItems from '../../model/media';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import initialState from './initialState';
@@ -14,7 +15,7 @@ const configureStore = () => {
             media,
             user
         }),
-        initialState(),
+        initialState(mediaItems),
         composeWithDevTools(
             applyMiddleware(
                 UserMiddleware

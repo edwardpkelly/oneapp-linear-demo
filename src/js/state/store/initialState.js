@@ -11,6 +11,7 @@ const defaultState = {
     }
 };
 
-export default () => {
+export default (mediaItems = []) => {
+    defaultState.media.mediaItems = mediaItems;
     return defaultState;
 };
