@@ -18,7 +18,7 @@ const onConfigLoaded = evt => {
     parameters.mvpdId = selectedMvpdId;
     parameters.callsign = "usawest";
 
-    cpcplayer = NBCUniCPC.controller.loadEvent("videoplayer", NBCUniCPC.Account[DEFAULT_BRAND.config], contentInitObj, parameters);
+    cpcplayer = NBCUniCPC.controller.loadEvent("videoplayer", NBCUniCPC.Account[DEFAULT_BRAND.cpc_config], contentInitObj, parameters);
     cpcplayer.addEventListener(NBCUniCPC.Event.PLAYBACK_READY, onReady);
 
     // TODO : Update UI buttons

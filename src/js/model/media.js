@@ -1,74 +1,83 @@
 const media = [
     {
-        name: "bravo",
+        data: "bravo",
         displayName: "Bravo",
         params: { "autoPlay": true, "mParticleId": "595844347038223836", "appSessionId": "8A56A219-FD69-49A2-9D3B-42DF28887F84", "pageAppVersion": "1.133.33" },
         videoId: "LIVE",
         callsigns: ['east', 'west'],
+        requestor: 'bravo',
         cpc_config: "BRAVO_ONEAPP_STAGE"
     },
     {
-        name: "cnbc",
+        data: "cnbc",
         displayName: "CNBC",
         params: { "autoPlay": true, "mParticleId": "595844347038223836", "appSessionId": "8A56A219-FD69-49A2-9D3B-42DF28887F84", "pageAppVersion": "1.133.33" },
         videoId: "LIVE",
         callsigns: [],
+        requestor: 'cnbc',
         cpc_config: "CNBC_ONEAPP_STAGE"
     },
     {
-        name: "e",
+        data: "e",
         displayName: "E! Netowrk",
         params: { "autoPlay": true, "mParticleId": "595844347038223836", "appSessionId": "8A56A219-FD69-49A2-9D3B-42DF28887F84", "pageAppVersion": "1.133.33" },
         videoId: "LIVE",
         callsigns: ['east', 'west'],
+        requestor: 'e',
         cpc_config: "E_ONEAPP_STAGE"
     },
     {
-        name: "msnbc",
+        data: "msnbc",
         displayName: "MSNBC",
         params: { "autoPlay": true, "mParticleId": "595844347038223836", "appSessionId": "8A56A219-FD69-49A2-9D3B-42DF28887F84", "pageAppVersion": "1.133.33" },
         videoId: "LIVE",
         callsigns: [],
+        requestor: 'nbcentertainment',
         cpc_config: "MSBC_ONEAPP_STAGE"
     },
     {
-        name: "nbc",
+        data: "nbc",
         displayName: "NBC",
         params: { "autoPlay": true, "mParticleId": "595844347038223836", "appSessionId": "8A56A219-FD69-49A2-9D3B-42DF28887F84", "pageAppVersion": "1.133.33" },
         videoId: "LIVE",
         callsigns: [],
+        requestor: 'nbcentertainment',
         cpc_config: "NBC_STAGE"
     },
     {
-        name: "oxygen",
+        data: "oxygen",
         displayName: "Oxygen",
         params: { "autoPlay": true, "mParticleId": "595844347038223836", "appSessionId": "8A56A219-FD69-49A2-9D3B-42DF28887F84", "pageAppVersion": "1.133.33" },
         videoId: "LIVE",
         callsigns: ['east', 'west'],
+        requestor: 'oxygen',
         cpc_config: "OXYGEN_ONEAPP_STAGE"
     },
     {
-        name: "syfy",
+        data: "syfy",
         displayName: "USA Network",
         params: { "autoPlay": true, "mParticleId": "595844347038223836", "appSessionId": "8A56A219-FD69-49A2-9D3B-42DF28887F84", "pageAppVersion": "1.133.33" },
         videoId: "LIVE",
         callsigns: ['east', 'west'],
+        requestor: 'syfy',
         cpc_config: "SYFY_ONEAPP_STAGE"
     },
     {
-        name: "universo",
-        displayName: "Universo",
+        data: "universo",
+        displayName: "NBC Universo",
         params: { "autoPlay": true, "mParticleId": "595844347038223836", "appSessionId": "8A56A219-FD69-49A2-9D3B-42DF28887F84", "pageAppVersion": "1.133.33" },
         videoId: "LIVE",
         callsigns: ['east', 'west'],
+        requestor: 'mun2',
         cpc_config: "NBCUNIVERSO_ONEAPP_STAGE"
     },
     {
-        name: "usa",
+        data: "usa",
         displayName: "USA Network",
         params: { "autoPlay": true, "mParticleId": "595844347038223836", "appSessionId": "8A56A219-FD69-49A2-9D3B-42DF28887F84", "pageAppVersion": "1.133.33" },
         videoId: "LIVE",
         callsigns: ['east', 'west'],
+        requestor: 'usa',
         cpc_config: "USA_ONEAPP_STAGE"
     }
 ];

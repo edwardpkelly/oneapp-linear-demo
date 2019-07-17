@@ -16,7 +16,7 @@ const MediaGrid = props => {
         mediaItems.map((item, index) => {
             return <MediaItem 
                         key={index}
-                        name={item.name} 
+                        name={item.data} 
                         callsigns={item.callsigns} 
                         displayName={item.displayName}
                         userAuthenticated={userAuthenticated}
