@@ -42,6 +42,7 @@ const AuthControl = props => {
                 value={authenticatedMvpdId ? authenticatedMvpdId : ''} 
                 disabled={authenticatedMvpdId !== null}
                 className="form-control mr-sm-3" 
+                id="mvpd-select"
                 onChange={(event) => onUpdateSelection(event)}
             >
                 {

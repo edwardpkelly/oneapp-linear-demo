@@ -42,7 +42,7 @@ const Footer = (props) => {
                     }
                 </span>
                 {
-                    userAuthenticated !== null ? <span className={badgeClass}>{badgeLabel}</span> : null
+                    userAuthenticated !== null ? 'Adobe Pass: ' + <span className={badgeClass}>{badgeLabel}</span> : null
                 }
             </div>
         </footer>

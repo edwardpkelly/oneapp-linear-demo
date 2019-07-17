@@ -42,7 +42,7 @@ const renderApp = () => {
 
     render(
         <MediaGridComponent />,
-        document.getElementById('channels')
+        document.getElementById('mediaGrid')
     );
 
     render(

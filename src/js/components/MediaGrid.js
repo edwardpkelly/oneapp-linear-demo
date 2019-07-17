@@ -4,9 +4,23 @@ import { connect } from 'react-redux';
 import MediaItem from './MediaItem';
 
 const MediaGrid = props => {
+    const { media } = props;
+    const { mediaItems } = media;
+
     return (
-        <h1>Here!</h1>
+        mediaItems.map((item, index) => {
+            return <MediaItem 
+                        key={index}
+                        name={item.name} 
+                        callsigns={item.callsigns} 
+                        displayName={item.displayName}
+                    />
+        })
     )
 };
 
-export default connect()(MediaGrid);
+const mapStateToProps = state => ({
+    media: state.media
+});
+
+export default connect(mapStateToProps)(MediaGrid);

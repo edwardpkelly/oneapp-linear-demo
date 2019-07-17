@@ -1,5 +1,5 @@
-const path = require("path");
 const webpack = require("webpack");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
     entry: {
@@ -22,6 +22,12 @@ module.exports = {
             jQuery: "jquery",
             $: "jquery",
             jquery: "jquery"
-        })
+        }),
+        new CopyWebpackPlugin([
+            {
+                from: "./src/images",
+                to: "images"
+            }
+        ])
     ]
 };
