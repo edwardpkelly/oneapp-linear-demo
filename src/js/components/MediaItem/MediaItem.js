@@ -24,6 +24,8 @@ const MediaItem = props => {
                 {
                     (userAuthenticated !== AuthConstants.NOT_AUTHENTICATED) ? 
                         <MediaButtonComponent 
+                            name={name}
+                            label={displayName}
                             callsigns={callsigns} 
                             handleWatchBtnClick={handleWatchBtnClick} 
                         /> : <SignInButton handleSignInBtnClick={handleSignInBtnClick} />

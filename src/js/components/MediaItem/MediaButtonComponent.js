@@ -5,6 +5,8 @@ import MediaButton from './MediaButton';
 const MediaButtonComponent = props => {
     const {
         callsigns,
+        label,
+        name,
         handleWatchBtnClick
     } = props;
 
@@ -13,8 +15,19 @@ const MediaButtonComponent = props => {
             {
                 callsigns.length ?
                     callsigns.map((item, index) => {
-                        return <MediaButton key={index} callsign={item} handleWatchBtnClick={handleWatchBtnClick} />
-                    }) : <MediaButton handleWatchBtnClick={handleWatchBtnClick} />
+                        return (
+                            <MediaButton 
+                                key={index} 
+                                callsign={item} 
+                                label={label} 
+                                name={name} 
+                                handleWatchBtnClick={handleWatchBtnClick} 
+                            />
+                        )
+                    }) : <MediaButton 
+                            name={name} 
+                            label={label} 
+                            handleWatchBtnClick={handleWatchBtnClick} />
             }
         </Fragment>
     );

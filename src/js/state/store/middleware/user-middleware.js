@@ -9,6 +9,18 @@ const UserMiddleware = store => next => action => {
             const { selectedMvpdId: mvpd } = auth;
             $(document).trigger({ type: UserConstants.AUTH_BTN_SELECTED, mvpd });
             break;
+
+        case UserConstants.SIGN_IN_BTN_SELECTED : {
+            const { data } = action;
+            $(document).trigger({ type: UserConstants.SIGN_IN_BTN_SELECTED, data });
+            break;
+        }
+
+        case UserConstants.WATCH_BTN_SELECTED : {
+            const { data } = action;
+            $(document).trigger({ type: UserConstants.WATCH_BTN_SELECTED, data });
+            break;
+        }
     }
 };
 

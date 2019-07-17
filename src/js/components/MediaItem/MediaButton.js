@@ -3,6 +3,8 @@ import React from 'react';
 const MediaButton = props => {
     const { 
         callsign,
+        label,
+        name,
         handleWatchBtnClick
      } = props;
 
@@ -10,9 +12,9 @@ const MediaButton = props => {
         <button
             type="button" 
             className="btn btn-lg btn-block btn-primary btn-watch-now"
-            onClick={handleWatchBtnClick}
+            onClick={() => handleWatchBtnClick(name, callsign)}
         >
-            Watch Show {callsign}
+            Watch {label} {callsign}
         </button>
     )
 };
