@@ -1,11 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import MediaItem from './MediaItem';
+import MediaItem from './MediaItem/MediaItem';
 
 const MediaGrid = props => {
-    const { media } = props;
+    const { 
+        auth,
+        media 
+    } = props;
+
     const { mediaItems } = media;
+    const { userAuthenticated } = auth;
 
     return (
         mediaItems.map((item, index) => {
@@ -14,12 +19,14 @@ const MediaGrid = props => {
                         name={item.name} 
                         callsigns={item.callsigns} 
                         displayName={item.displayName}
+                        userAuthenticated={userAuthenticated}
                     />
         })
     )
 };
 
 const mapStateToProps = state => ({
+    auth: state.auth,
     media: state.media
 });
 

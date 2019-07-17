@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Media = props => {
+const SignInButton = props => {
     const { callsign } = props;
 
     return (
@@ -13,4 +13,4 @@ const Media = props => {
     )
 };
 
-export default Media;
+export default SignInButton;

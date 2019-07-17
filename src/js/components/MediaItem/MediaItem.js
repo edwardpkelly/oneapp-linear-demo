@@ -1,12 +1,15 @@
 import React from 'react';
-import MediaButton from './MediaButton';
+import AuthConstants from '../../constants/auth-constants';
+import MediaButtonComponent from './MediaButtonComponent';
+import SignInButton from './SignInButton';
 
 const MediaItem = props => {
     
     const {
         name,
         displayName,
-        callsigns
+        callsigns,
+        userAuthenticated
     } = props;
 
     const imgUrl = `images/${name}.png`;
@@ -16,13 +19,10 @@ const MediaItem = props => {
             <div className="card mb-4 shadow-sm">
                 <img className="card-img-top" src={imgUrl} alt={displayName} />
                 <div className="card-body">
-                    {
-                        callsigns.length ? 
-                        callsigns.map(item => {
-                            return <MediaButton callsign={item}/>
-                        }) :
-                        <MediaButton />
-                    }
+                {
+                    (userAuthenticated !== AuthConstants.NOT_AUTHENTICATED) ? 
+                        <MediaButtonComponent callsigns={callsigns} /> : <SignInButton />
+                }
                 </div>
             </div>
         </div>

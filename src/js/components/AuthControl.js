@@ -16,8 +16,11 @@ const AuthControl = props => {
 
     const {
         mvpdList,
-        authenticatedMvpdId
+        authenticatedMvpdId,
+        selectedMvpd
     } = auth;
+
+    
 
     const handleAuthClick = () => {
         authButtonSelected();
@@ -39,7 +42,7 @@ const AuthControl = props => {
     return (
         <Fragment>
             <select 
-                value={authenticatedMvpdId ? authenticatedMvpdId : ''} 
+                value={authenticatedMvpdId ? authenticatedMvpdId : selectedMvpd} 
                 disabled={authenticatedMvpdId !== null}
                 className="form-control mr-sm-3" 
                 id="mvpd-select"

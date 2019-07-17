@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import AuthConstants from '../constants/auth-constants';
 
 import '../../css/Footer.css';
+import user from '../state/reducers/user';
 
 const Footer = (props) => {
 
@@ -32,7 +33,7 @@ const Footer = (props) => {
         badgeClass = 'badge badge-success';
         footerClass += 'adobe-pass-success';
     }
-
+    
     return (
         <footer className={footerClass}>
             <div className="container">
@@ -42,7 +43,10 @@ const Footer = (props) => {
                     }
                 </span>
                 {
-                    userAuthenticated !== null ? 'Adobe Pass: ' + <span className={badgeClass}>{badgeLabel}</span> : null
+                    userAuthenticated !== null ? 'Adobe Pass: ' : null
+                }
+                {
+                    userAuthenticated !== null ? <span className={badgeClass}>{badgeLabel}</span> : null
                 }
             </div>
         </footer>
