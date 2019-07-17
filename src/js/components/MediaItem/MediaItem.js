@@ -9,7 +9,9 @@ const MediaItem = props => {
         name,
         displayName,
         callsigns,
-        userAuthenticated
+        userAuthenticated,
+        handleWatchBtnClick,
+        handleSignInBtnClick
     } = props;
 
     const imgUrl = `images/${name}.png`;
@@ -21,7 +23,10 @@ const MediaItem = props => {
                 <div className="card-body">
                 {
                     (userAuthenticated !== AuthConstants.NOT_AUTHENTICATED) ? 
-                        <MediaButtonComponent callsigns={callsigns} /> : <SignInButton />
+                        <MediaButtonComponent 
+                            callsigns={callsigns} 
+                            handleWatchBtnClick={handleWatchBtnClick} 
+                        /> : <SignInButton handleSignInBtnClick={handleSignInBtnClick} />
                 }
                 </div>
             </div>

@@ -4,23 +4,33 @@ import { connect } from 'react-redux';
 import MediaItem from './MediaItem/MediaItem';
 
 const MediaGrid = props => {
-    const { 
+    const {
         auth,
-        media 
+        media
     } = props;
 
     const { mediaItems } = media;
     const { userAuthenticated } = auth;
 
+    const handleWatchBtnClick = (brand, callsign) => {
+        alert('watch!');
+    };
+
+    const handleSignInBtnClick = () => {
+        alert('sign in!');
+    };
+
     return (
         mediaItems.map((item, index) => {
-            return <MediaItem 
-                        key={index}
-                        name={item.data} 
-                        callsigns={item.callsigns} 
-                        displayName={item.displayName}
-                        userAuthenticated={userAuthenticated}
-                    />
+            return <MediaItem
+                key={index}
+                name={item.data}
+                callsigns={item.callsigns}
+                displayName={item.displayName}
+                userAuthenticated={userAuthenticated}
+                handleWatchBtnClick={handleWatchBtnClick}
+                handleSignInBtnClick={handleSignInBtnClick}
+            />
         })
     )
 };
