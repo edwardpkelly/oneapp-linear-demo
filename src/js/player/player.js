@@ -57,7 +57,6 @@ const loadMediaItem = (mediaItem, callsign) => {
     }
     contentInitObj.videoId = "LIVE";
     NBCUniCPC.controller.updateLiveEvent("videoplayer", NBCUniCPC.Account[cpc_config], contentInitObj, params);
-    debugger
 }
 
 NBCUniCPC.DEFAULT_LOG_LEVEL = NBCUniCPC.LogLevel.ALL; // verbose logging for demonstration purposes

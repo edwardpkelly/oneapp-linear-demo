@@ -14,8 +14,6 @@ import {
     MediaItemsComponent,
     FooterComponent
 } from './app';
-import UserConstants from './constants/user-constants';
-
 
 (() => {
     const windowObj = window || {};
