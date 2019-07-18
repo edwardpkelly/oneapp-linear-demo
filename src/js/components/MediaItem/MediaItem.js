@@ -4,7 +4,7 @@ import MediaButtonComponent from './MediaButtonComponent';
 import SignInButton from './SignInButton';
 
 const MediaItem = props => {
-    
+
     const {
         name,
         displayName,
@@ -21,15 +21,25 @@ const MediaItem = props => {
             <div className="card mb-4 shadow-sm">
                 <img className="card-img-top" src={imgUrl} alt={displayName} />
                 <div className="card-body">
-                {
-                    (userAuthenticated !== AuthConstants.NOT_AUTHENTICATED) ? 
-                        <MediaButtonComponent 
-                            name={name}
-                            label={displayName}
-                            callsigns={callsigns} 
-                            handleWatchBtnClick={handleWatchBtnClick} 
-                        /> : <SignInButton handleSignInBtnClick={handleSignInBtnClick} />
-                }
+                    {
+                        (userAuthenticated !== AuthConstants.NOT_AUTHENTICATED) ?
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small>
+                                    {
+                                        callsigns.length ? 'Choose a location:' : null
+                                    }
+                                </small>
+                                <div className="btn-group">
+
+                                    <MediaButtonComponent
+                                        name={name}
+                                        label={displayName}
+                                        callsigns={callsigns}
+                                        handleWatchBtnClick={handleWatchBtnClick}
+                                    />
+                                </div>
+                            </div> : <SignInButton handleSignInBtnClick={handleSignInBtnClick} />
+                    }
                 </div>
             </div>
         </div>

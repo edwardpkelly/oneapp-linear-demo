@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import AuthControl from './components/AuthControl';
 import VideoPlayer from './components/VideoPlayer';
-import MediaGrid from './components/MediaGrid';
+import MediaItemsContainer from './components/MediaItemsContainer';
 import Footer from './components/Footer';
 import { store } from './state/store/store';
 
@@ -24,10 +24,10 @@ const VideoPlayerComponent = () => {
     );
 };
 
-const MediaGridComponent = () => {
+const MediaItemsComponent = () => {
     return (
         <Provider store={storeInstance}>
-            <MediaGrid />
+            <MediaItemsContainer />
         </Provider>
     );
 };
@@ -43,6 +43,6 @@ const FooterComponent = () => {
 export {
     AuthControlComponent,
     VideoPlayerComponent,
-    MediaGridComponent,
+    MediaItemsComponent,
     FooterComponent
 }

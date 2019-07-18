@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 
 import '../css/app.css';
 import '../css/bootstrap.scss';
-import { loadPlayer } from './player/player';
+import { loadPlayer, loadMediaItem } from './player/player';
 import AuthConstants from './constants/auth-constants';
 import { configureAuthHelper } from './auth/authHelper';
 
@@ -11,9 +11,11 @@ import findBrandData from './utils/findBrandData';
 import { 
     AuthControlComponent,
     VideoPlayerComponent,
-    MediaGridComponent,
+    MediaItemsComponent,
     FooterComponent
 } from './app';
+import UserConstants from './constants/user-constants';
+
 
 (() => {
     const windowObj = window || {};
@@ -41,8 +43,8 @@ const renderApp = () => {
     );
 
     render(
-        <MediaGridComponent />,
-        document.getElementById('mediaGrid')
+        <MediaItemsComponent />,
+        document.getElementById('mediaItems')
     );
 
     render(

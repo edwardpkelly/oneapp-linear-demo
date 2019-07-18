@@ -33,7 +33,7 @@ const media = [
         videoId: "LIVE",
         callsigns: [],
         requestor: 'nbcentertainment',
-        cpc_config: "MSBC_ONEAPP_STAGE"
+        cpc_config: "MSNBC_ONEAPP_STAGE"
     },
     {
         data: "nbc",
@@ -55,7 +55,7 @@ const media = [
     },
     {
         data: "syfy",
-        displayName: "USA Network",
+        displayName: "Syfy",
         params: { "autoPlay": true, "mParticleId": "595844347038223836", "appSessionId": "8A56A219-FD69-49A2-9D3B-42DF28887F84", "pageAppVersion": "1.133.33" },
         videoId: "LIVE",
         callsigns: ['east', 'west'],

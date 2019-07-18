@@ -11,14 +11,18 @@ const UserMiddleware = store => next => action => {
             break;
 
         case UserConstants.SIGN_IN_BTN_SELECTED : {
-            const { data } = action;
-            $(document).trigger({ type: UserConstants.SIGN_IN_BTN_SELECTED, data });
+            $(document).trigger({ type: UserConstants.SIGN_IN_BTN_SELECTED });
             break;
         }
 
         case UserConstants.WATCH_BTN_SELECTED : {
             const { data } = action;
-            $(document).trigger({ type: UserConstants.WATCH_BTN_SELECTED, data });
+            const {
+                brand,
+                callsign
+            } = data;
+
+            $(document).trigger({ type: UserConstants.WATCH_BTN_SELECTED, eventObject: {brand, callsign} });
             break;
         }
     }

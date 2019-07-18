@@ -7,7 +7,7 @@ import {
     watchButtonSelected
 } from '../state/actions/user-actions';
 
-const MediaGrid = props => {
+const MediaItemsContainer = props => {
     const {
         auth,
         media,
@@ -51,4 +51,4 @@ const mapStateToProps = state => ({
     media: state.media
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(MediaGrid);
+export default connect(mapStateToProps, mapDispatchToProps)(MediaItemsContainer);

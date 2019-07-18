@@ -26,6 +26,7 @@ const adobePassActionCreator = store => {
             case AuthConstants.ON_SET_SELECTED_PROVIDER : {
                 const { mvpd } = event;
                 store.dispatch(onSetSelectedProvider({ mvpd }));
+                break;
             }
         }
     };

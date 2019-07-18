@@ -1,22 +1,27 @@
 import React from 'react';
+import upperFirst from '../../utils/ui/uppercaseFirst';
 
 const MediaButton = props => {
-    const { 
+    const {
         callsign,
         label,
         name,
         handleWatchBtnClick
-     } = props;
+    } = props;
+
+    const btnString = callsign ? upperFirst(callsign) : 'Watch ' + label;
 
     return (
         <button
-            type="button" 
-            className="btn btn-lg btn-block btn-primary btn-watch-now"
+            type="button"
+            class="btn btn-sm btn-outline-primary"
             onClick={() => handleWatchBtnClick(name, callsign)}
         >
-            Watch {label} {callsign}
+            {
+                btnString
+            }
         </button>
-    )
+    );
 };
 
 export default MediaButton;
