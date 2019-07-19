@@ -8,6 +8,14 @@ const defaultState = {
     },
     media: {
         mediaItems: []
+    },
+    player: {
+        currentMediaItem: {
+            brand: null,
+            callsign: null,
+            cpc_config: null,
+            requestor: null
+        }
     }
 };
 

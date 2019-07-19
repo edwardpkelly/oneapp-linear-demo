@@ -1,10 +1,16 @@
+import AuthConstants from '../constants/auth-constants';
 import UserConstants from '../constants/user-constants';
 import findBrandData from '../utils/findBrandData';
 import scrollTop from '../utils/ui/smoothScroll';
+import PlayerConstants from '../constants/player-constants';
 
 let windowObj = window || {};
 let cpcplayer;
 let playerInited = false;
+
+$(document).on(AuthConstants.ON_SET_TOKEN, (event) => {
+    loadPlayer();
+});
 
 $(document).on(UserConstants.SIGN_IN_BTN_SELECTED, () => {
     scrollTop('main-content');
@@ -15,6 +21,15 @@ $(document).on(UserConstants.WATCH_BTN_SELECTED, ({ eventObject }) => {
     const mediaItem = findBrandData(brand);
     loadMediaItem(mediaItem, callsign);
 });
+
+const dispatchUpdateMediaEVent = (media, callsign = "") => {
+    if (!media) return;
+    const currentItem = {
+        ...media,
+        callsign
+    }
+    $(document).trigger({ type: PlayerConstants.ON_MEDIA_ITEM_UPDATED, eventObject: { currentMediaItem: currentItem } });
+};
 
 const onReady = event => {
     cpcplayer.removeEventListener(NBCUniCPC.Event.PLAYBACK_READY, onReady);
@@ -28,15 +43,16 @@ const onConfigLoaded = evt => {
     let contentInitObj = new NBCUniCPC.ContentInitializationObject();
     contentInitObj.videoId = NBCUniCPC.StreamType.LIVE;
     let parameters = new NBCUniCPC.PlayerParameters();
+    if (DEFAULT_BRAND.callsign) {
+        parameters.callsign = DEFAULT_BRAND.callsign;
+    }
     parameters.autoPlay = false;
     parameters.mvpdId = selectedMvpdId;
 
     cpcplayer = NBCUniCPC.controller.loadEvent("videoplayer", NBCUniCPC.Account[DEFAULT_BRAND.cpc_config], contentInitObj, parameters);
     cpcplayer.addEventListener(NBCUniCPC.Event.PLAYBACK_READY, onReady);
 
-    // TODO : Update UI buttons
-    //updateUiWithAuthStatus();
-    //updateElements(DEFAULT_BRAND.data);
+    dispatchUpdateMediaEVent(DEFAULT_BRAND, DEFAULT_BRAND.callsign);
 }
 
 const loadPlayer = () => {
@@ -57,6 +73,8 @@ const loadMediaItem = (mediaItem, callsign) => {
     }
     contentInitObj.videoId = "LIVE";
     NBCUniCPC.controller.updateLiveEvent("videoplayer", NBCUniCPC.Account[cpc_config], contentInitObj, params);
+
+    dispatchUpdateMediaEVent(mediaItem, callsign);
 }
 
 NBCUniCPC.DEFAULT_LOG_LEVEL = NBCUniCPC.LogLevel.ALL; // verbose logging for demonstration purposes

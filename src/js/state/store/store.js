@@ -4,16 +4,17 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import initialState from './initialState';
 import auth from '../reducers/auth';
 import media from '../reducers/media';
-import user from '../reducers/user';
+import player from '../reducers/player';
 import UserMiddleware from '../store/middleware/user-middleware';
 import { adobePassActionCreator } from '../actions/adobepass-action-creator';
+import { playerActionCreator } from '../actions/player-action-creator';
 
 const configureStore = () => {
     const store = createStore(
         combineReducers({
             auth,
             media,
-            user
+            player
         }),
         initialState(mediaItems),
         composeWithDevTools(
@@ -23,7 +24,8 @@ const configureStore = () => {
         )
     );
     adobePassActionCreator(store);
-
+    playerActionCreator(store);
+    
     return store;
 };
 

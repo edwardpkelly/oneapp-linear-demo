@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 
 import '../css/app.css';
 import '../css/bootstrap.scss';
-import { loadPlayer, loadMediaItem } from './player/player';
+import { loadPlayer } from './player/player';
 import AuthConstants from './constants/auth-constants';
 import { configureAuthHelper } from './auth/authHelper';
 
@@ -21,13 +21,11 @@ import {
     let params = new URLSearchParams(windowObj.location.search);
     if (params.get('brand') && findBrandData(params.get('brand'))) {
         DEFAULT_BRAND = findBrandData(params.get('brand'));
+    } else if (params.get('callsign')) {
+        DEFAULT_BRAND.callsign = params.get('callsign');
     }
     configureAuthHelper();
 })();
-
-$(document).on(AuthConstants.ON_SET_TOKEN, (event) => {
-    loadPlayer();
-});
 
 const renderApp = () => {
     render(
