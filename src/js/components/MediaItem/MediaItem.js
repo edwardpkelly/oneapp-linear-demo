@@ -9,7 +9,7 @@ const MediaItem = props => {
         name,
         displayName,
         callsigns,
-        currentBrand,
+        isSelectedItem,
         currentCallsign,
         userAuthenticated,
         handleWatchBtnClick,
@@ -17,9 +17,13 @@ const MediaItem = props => {
     } = props;
 
     const imgUrl = `images/${name}.png`;
-    const cardClass = (name === currentBrand) ? 'card mb-4 shadow-sm border-danger' : 'card mb-4 shadow-sm';
-    const headerClass = (name === currentBrand) ? 'card-header text-center text-white bg-danger border-danger' : 'card-header text-center';
-    const gutterText = (name === currentBrand) ? 
+    let cardClass = 'card mb-4 shadow-sm';
+    let headerClass = 'card-header text-center';
+
+    if (isSelectedItem) cardClass += ' border-danger';
+    if (isSelectedItem) headerClass += ' text-white bg-danger border-danger';
+    
+    const gutterText = (isSelectedItem) ? 
                         'Watching NOW' :
                         (callsigns.length) ? 'Choose a location:' : null;
 
@@ -39,6 +43,8 @@ const MediaItem = props => {
 
                                     <MediaButtonComponent
                                         name={name}
+                                        currentCallsign={currentCallsign}
+                                        isSelectedItem={isSelectedItem}
                                         label={displayName}
                                         callsigns={callsigns}
                                         handleWatchBtnClick={handleWatchBtnClick}

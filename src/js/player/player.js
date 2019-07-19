@@ -8,15 +8,12 @@ let windowObj = window || {};
 let cpcplayer;
 let playerInited = false;
 
-$(document).on(AuthConstants.ON_SET_TOKEN, (event) => {
-    loadPlayer();
-});
-
 $(document).on(UserConstants.SIGN_IN_BTN_SELECTED, () => {
     scrollTop('main-content');
 });
 
 $(document).on(UserConstants.WATCH_BTN_SELECTED, ({ eventObject }) => {
+    scrollTop('main-content');
     const { brand, callsign } = eventObject;
     const mediaItem = findBrandData(brand);
     loadMediaItem(mediaItem, callsign);

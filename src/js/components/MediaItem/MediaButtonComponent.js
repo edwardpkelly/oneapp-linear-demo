@@ -5,6 +5,8 @@ import MediaButton from './MediaButton';
 const MediaButtonComponent = props => {
     const {
         callsigns,
+        currentCallsign,
+        isSelectedItem,
         label,
         name,
         handleWatchBtnClick
@@ -19,6 +21,7 @@ const MediaButtonComponent = props => {
                             <MediaButton 
                                 key={index} 
                                 callsign={item} 
+                                isSelectedBtn={isSelectedItem ? (currentCallsign !== "" ? item.data === currentCallsign : true) : false}
                                 label={label} 
                                 name={name} 
                                 handleWatchBtnClick={handleWatchBtnClick} 
@@ -26,6 +29,7 @@ const MediaButtonComponent = props => {
                         )
                     }) : <MediaButton 
                             name={name} 
+                            isSelectedBtn={isSelectedItem}
                             label={label} 
                             handleWatchBtnClick={handleWatchBtnClick} />
             }

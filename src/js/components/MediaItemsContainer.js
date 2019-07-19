@@ -43,7 +43,7 @@ const MediaItemsContainer = props => {
                 name={item.data}
                 callsigns={item.callsigns}
                 currentCallsign={currentCallsign}
-                currentBrand={currentBrand}
+                isSelectedItem={currentBrand === item.data}
                 displayName={item.displayName}
                 userAuthenticated={userAuthenticated}
                 handleWatchBtnClick={handleWatchBtnClick}

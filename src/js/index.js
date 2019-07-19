@@ -3,8 +3,8 @@ import { render } from 'react-dom';
 
 import '../css/app.css';
 import '../css/bootstrap.scss';
-import { loadPlayer } from './player/player';
 import AuthConstants from './constants/auth-constants';
+import { loadPlayer } from './player/player';
 import { configureAuthHelper } from './auth/authHelper';
 
 import findBrandData from './utils/findBrandData';
@@ -26,6 +26,10 @@ import {
     }
     configureAuthHelper();
 })();
+
+$(document).on(AuthConstants.ON_SET_TOKEN, (event) => {
+    loadPlayer();
+});
 
 const renderApp = () => {
     render(
