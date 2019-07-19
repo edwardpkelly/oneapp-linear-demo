@@ -11,9 +11,19 @@ const MediaItemsContainer = props => {
     const {
         auth,
         media,
+        player,
         signInButtonSelected,
         watchButtonSelected
     } = props;
+
+    const {
+        currentMediaItem
+    } = player;
+
+    const {
+        brand: currentBrand,
+        callsign: currentCallsign
+    } = currentMediaItem;
     
     const { mediaItems } = media;
     const { userAuthenticated } = auth;
@@ -32,6 +42,8 @@ const MediaItemsContainer = props => {
                 key={index}
                 name={item.data}
                 callsigns={item.callsigns}
+                currentCallsign={currentCallsign}
+                currentBrand={currentBrand}
                 displayName={item.displayName}
                 userAuthenticated={userAuthenticated}
                 handleWatchBtnClick={handleWatchBtnClick}
@@ -48,7 +60,8 @@ const mapDispatchToProps = {
 
 const mapStateToProps = state => ({
     auth: state.auth,
-    media: state.media
+    media: state.media,
+    player: state.player
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MediaItemsContainer);
