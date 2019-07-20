@@ -1,7 +1,9 @@
+import AuthConstants from '../../constants/auth-constants';
+
 const defaultState = {
     auth: {
         authenticatedMvpdId: null,
-        userAuthenticated: null,
+        userAuthenticated: AuthConstants.NOT_AUTHENTICATED,
         entitlementLoaded: false,
         mvpdList: [],
         selectedMvpdId: null,
@@ -12,8 +14,9 @@ const defaultState = {
     player: {
         currentMediaItem: {
             brand: null,
-            callsign: null,
+            callsignData: {label: '', data: ''},
             cpc_config: null,
+            displayName: "",
             requestor: null
         }
     }

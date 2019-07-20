@@ -19,7 +19,7 @@ $(document).on(UserConstants.WATCH_BTN_SELECTED, ({ eventObject }) => {
     loadMediaItem(mediaItem, callsign);
 });
 
-const dispatchUpdateMediaEVent = (media, callsign = "") => {
+const dispatchUpdateMediaEVent = (media, callsign = {}) => {
     if (!media) return;
     const currentItem = {
         ...media,
@@ -40,8 +40,13 @@ const onConfigLoaded = evt => {
     let contentInitObj = new NBCUniCPC.ContentInitializationObject();
     contentInitObj.videoId = NBCUniCPC.StreamType.LIVE;
     let parameters = new NBCUniCPC.PlayerParameters();
+    let callsignData = {};
+
     if (DEFAULT_BRAND.callsign) {
         parameters.callsign = DEFAULT_BRAND.callsign;
+        callsignData = mediaItem.callsigns.find(item => {
+            return item.data === callsign;
+        });
     }
     parameters.autoPlay = false;
     parameters.mvpdId = selectedMvpdId;
@@ -49,7 +54,7 @@ const onConfigLoaded = evt => {
     cpcplayer = NBCUniCPC.controller.loadEvent("videoplayer", NBCUniCPC.Account[DEFAULT_BRAND.cpc_config], contentInitObj, parameters);
     cpcplayer.addEventListener(NBCUniCPC.Event.PLAYBACK_READY, onReady);
 
-    dispatchUpdateMediaEVent(DEFAULT_BRAND, DEFAULT_BRAND.callsign);
+    dispatchUpdateMediaEVent(DEFAULT_BRAND, callsignData);
 }
 
 const loadPlayer = () => {
@@ -62,16 +67,21 @@ const loadPlayer = () => {
 }
 
 const loadMediaItem = (mediaItem, callsign) => {
-    var contentInitObj = new NBCUniCPC.ContentInitializationObject();
+    let contentInitObj = new NBCUniCPC.ContentInitializationObject();
+    let callsignData = {};
     const { params, cpc_config } = mediaItem;
+
     params.mvpdId = selectedMvpdId;
     if (callsign) {
         params.callsign = callsign;
+        callsignData = mediaItem.callsigns.find(item => {
+            return item.data === callsign;
+        });
     }
     contentInitObj.videoId = "LIVE";
     NBCUniCPC.controller.updateLiveEvent("videoplayer", NBCUniCPC.Account[cpc_config], contentInitObj, params);
 
-    dispatchUpdateMediaEVent(mediaItem, callsign);
+    dispatchUpdateMediaEVent(mediaItem, callsignData);
 }
 
 NBCUniCPC.DEFAULT_LOG_LEVEL = NBCUniCPC.LogLevel.ALL; // verbose logging for demonstration purposes

@@ -10,6 +10,7 @@ import { configureAuthHelper } from './auth/authHelper';
 import findBrandData from './utils/findBrandData';
 import { 
     AuthControlComponent,
+    InfoHeadlineComponent,
     VideoPlayerComponent,
     MediaItemsComponent,
     FooterComponent
@@ -35,6 +36,11 @@ const renderApp = () => {
     render(
         <AuthControlComponent />,
         document.getElementById('auth-control')
+    );
+
+    render(
+        <InfoHeadlineComponent />,
+        document.getElementById('watching-header')
     );
 
     render(

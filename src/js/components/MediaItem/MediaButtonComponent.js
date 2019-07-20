@@ -21,7 +21,7 @@ const MediaButtonComponent = props => {
                             <MediaButton 
                                 key={index} 
                                 callsign={item} 
-                                isSelectedBtn={isSelectedItem ? (currentCallsign !== "" ? item.data === currentCallsign : true) : false}
+                                isSelectedBtn={isSelectedItem ? (currentCallsign.label != "" ? item.data === currentCallsign.data : true) : false}
                                 label={label} 
                                 name={name} 
                                 handleWatchBtnClick={handleWatchBtnClick} 

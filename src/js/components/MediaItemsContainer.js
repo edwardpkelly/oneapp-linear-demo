@@ -22,7 +22,7 @@ const MediaItemsContainer = props => {
 
     const {
         brand: currentBrand,
-        callsign: currentCallsign
+        callsignData: currentCallsign
     } = currentMediaItem;
     
     const { mediaItems } = media;

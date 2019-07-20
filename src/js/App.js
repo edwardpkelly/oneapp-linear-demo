@@ -1,6 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import AuthControl from './components/AuthControl';
+import InfoHeadline from './components/InfoHeadline';
 import VideoPlayer from './components/VideoPlayer';
 import MediaItemsContainer from './components/MediaItemsContainer';
 import Footer from './components/Footer';
@@ -12,6 +13,14 @@ const AuthControlComponent = () => {
     return (
         <Provider store={storeInstance}>
             <AuthControl />
+        </Provider>
+    );
+};
+
+const InfoHeadlineComponent = () => {
+    return (
+        <Provider store={storeInstance}>
+            <InfoHeadline />
         </Provider>
     );
 };
@@ -42,6 +51,7 @@ const FooterComponent = () => {
 
 export {
     AuthControlComponent,
+    InfoHeadlineComponent,
     VideoPlayerComponent,
     MediaItemsComponent,
     FooterComponent

@@ -8,14 +8,24 @@ const player = (state = {}, action) => {
                 data: brand,
                 callsign,
                 cpc_config,
+                displayName,
                 requestor
             } = data;
+            
+            let callsignData = {label: '', data: ''};
+            if (callsign.hasOwnProperty('label') && callsign.hasOwnProperty('data')) {
+                callsignData = {
+                    ...callsign
+                };
+            }
+
             return {
                 ...state,
                 currentMediaItem: {
                     brand,
-                    callsign,
+                    callsignData,
                     cpc_config,
+                    displayName,
                     requestor
                 }
             }

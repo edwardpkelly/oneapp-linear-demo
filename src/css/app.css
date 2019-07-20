@@ -23,7 +23,7 @@
   padding-bottom: 1rem;
 }
 
-#watching-header {
+.now-watching-header-hidden {
   visibility: hidden;
 }
 
@@ -67,6 +67,18 @@ main #playerContainer {
 
 #player-auth-overlay>h4 {
   font-size: 1.2rem;
+}
+
+.player-auth-overlay-hide {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s .3s, opacity .3s linear;
+}
+
+.player-auth-overlay-show {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity .3s linear;
 }
 
 .spinner-border {
