@@ -18,7 +18,7 @@ const media = [
         cpc_config: "CNBC_ONEAPP_STAGE"
     },
     {
-        data: "e",
+        data: "e!",
         displayName: "E! Network",
         params: { "autoPlay": true, "mParticleId": "595844347038223836", "appSessionId": "8A56A219-FD69-49A2-9D3B-42DF28887F84", "pageAppVersion": "1.133.33" },
         videoId: "LIVE",

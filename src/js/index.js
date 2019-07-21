@@ -16,15 +16,25 @@ import {
     FooterComponent
 } from './app';
 
-(() => {
-    const windowObj = window || {};
+const setDefaultBrandData = (windowObj = {}) => {
     windowObj.DEFAULT_BRAND = findBrandData('nbc');
     let params = new URLSearchParams(windowObj.location.search);
     if (params.get('brand') && findBrandData(params.get('brand'))) {
         DEFAULT_BRAND = findBrandData(params.get('brand'));
-    } else if (params.get('callsign')) {
-        DEFAULT_BRAND.callsign = params.get('callsign');
+        debugger;
+        if (DEFAULT_BRAND.callsigns.length) {
+            if (params.get('callsign')) {
+                DEFAULT_BRAND.callsign = params.get('callsign');
+            } else {
+                DEFAULT_BRAND.callsign = DEFAULT_BRAND.callsigns[0].data;
+            }
+        }
     }
+};
+
+(() => {
+    const windowObj = window || {};
+    setDefaultBrandData(windowObj);
     configureAuthHelper();
 })();
 

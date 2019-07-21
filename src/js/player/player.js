@@ -1,4 +1,3 @@
-import AuthConstants from '../constants/auth-constants';
 import UserConstants from '../constants/user-constants';
 import findBrandData from '../utils/findBrandData';
 import scrollTop from '../utils/ui/smoothScroll';
@@ -44,8 +43,8 @@ const onConfigLoaded = evt => {
 
     if (DEFAULT_BRAND.callsign) {
         parameters.callsign = DEFAULT_BRAND.callsign;
-        callsignData = mediaItem.callsigns.find(item => {
-            return item.data === callsign;
+        callsignData = DEFAULT_BRAND.callsigns.find(item => {
+            return item.data === DEFAULT_BRAND.callsign;
         });
     }
     parameters.autoPlay = false;
