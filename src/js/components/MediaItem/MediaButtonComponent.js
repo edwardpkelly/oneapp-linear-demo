@@ -12,16 +12,25 @@ const MediaButtonComponent = props => {
         handleWatchBtnClick
     } = props;
 
+
+    let callsignValues = [];
+    if (callsigns.length) {
+        callsignValues = [
+            {label: 'Default', data: ''},
+            ...callsigns
+        ];
+    };
+
     return (
         <Fragment>
             {
-                callsigns.length ?
-                    callsigns.map((item, index) => {
+                callsignValues.length ?
+                callsignValues.map((item, index) => {
                         return (
                             <MediaButton 
                                 key={index} 
                                 callsign={item} 
-                                isSelectedBtn={isSelectedItem ? (currentCallsign.label != "" ? item.data === currentCallsign.data : true) : false}
+                                isSelectedBtn={isSelectedItem ? (currentCallsign.label != "Default" ? item.data === currentCallsign.data : true) : false}
                                 label={label} 
                                 name={name} 
                                 handleWatchBtnClick={handleWatchBtnClick} 

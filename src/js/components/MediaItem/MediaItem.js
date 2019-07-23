@@ -24,8 +24,8 @@ const MediaItem = props => {
     if (isSelectedItem) headerClass += ' text-white bg-danger border-danger';
     
     const gutterText = (isSelectedItem) ? 
-                        'Watching NOW' :
-                        (callsigns.length) ? 'Choose a location:' : null;
+                        'Live NOW' :
+                        (callsigns.length) ? 'Choose:' : null;
 
     return (
         <div className="col-lg-4 col-md-6">

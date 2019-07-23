@@ -21,7 +21,6 @@ const UserMiddleware = store => next => action => {
                 brand,
                 callsign
             } = data;
-
             $(document).trigger({ type: UserConstants.WATCH_BTN_SELECTED, eventObject: {brand, callsign} });
             break;
         }
