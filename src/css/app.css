@@ -92,6 +92,10 @@ main #playerContainer {
   margin: 0 auto 4rem;
 }
 
+.media-item-image {
+  cursor: pointer;
+}
+
 /* media queries */
 
 /* Phones/Screens in Landscape */

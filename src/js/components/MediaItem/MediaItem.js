@@ -31,7 +31,7 @@ const MediaItem = props => {
         <div className="col-lg-4 col-md-6">
             <div className={cardClass}>
                 <h5 className={headerClass}>{displayName}</h5>
-                <img className="card-img-top" src={imgUrl} alt={displayName} />
+                <img className="card-img-top media-item-image" src={imgUrl} alt={displayName} onClick={() => handleWatchBtnClick(name, null)} />
                 <div className="card-body">
                     {
                         (userAuthenticated !== AuthConstants.NOT_AUTHENTICATED) ?
