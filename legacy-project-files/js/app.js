@@ -21,7 +21,7 @@ var BRAND_VALUES =
         {
             label: 'MSNBC',
             data: 'msnbc',
-            requestor: 'nbcentertainment',
+            requestor: 'msnbc',
             config: 'MSNBC_ONEAPP_STAGE'
         },
         {
