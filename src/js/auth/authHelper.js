@@ -5,7 +5,7 @@ import log from '../utils/log';
 const authHelper = (windowObj) => {
     const MVPD_IFRAME_CONTAINER_ID = "mvpddiv";
     const MVPD_IFRAME_ID = "mvpdframe";
-    const authRequestorId = windowObj.DEFAULT_BRAND.requestor;
+    windowObj.authRequestorId = windowObj.DEFAULT_BRAND.requestor;
     let authStatus = AuthConstants.NOT_AUTHENTICATED;
 
     windowObj.entitlementLoaded = () => {
@@ -83,7 +83,7 @@ const authHelper = (windowObj) => {
 
         if (isAuthenticated) {
             authStatus = AuthConstants.AUTHENTICATED;
-            const mrss = "<rss version=\"2.0\" xmlns:media=\"http://search.yahoo.com/mrss/\"><channel><title>" + authRequestorId + "</title><item><title><![CDATA[<?php echo $TITLE ?>]]></title><guid><?php echo $GUID; ?></guid><media:rating scheme=\"urn:v-chip\"><?php echo $RATING; ?></media:rating></item></channel></rss>";
+            const mrss = "<rss version=\"2.0\" xmlns:media=\"http://search.yahoo.com/mrss/\"><channel><title>" + windowObj.authRequestorId + "</title><item><title><![CDATA[<?php echo $TITLE ?>]]></title><guid><?php echo $GUID; ?></guid><media:rating scheme=\"urn:v-chip\"><?php echo $RATING; ?></media:rating></item></channel></rss>";
             accessEnabler.getSelectedProvider();
             accessEnabler.getAuthorization(mrss, null);
         } else {

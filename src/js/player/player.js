@@ -68,7 +68,7 @@ const loadPlayer = () => {
 const loadMediaItem = (mediaItem, callsign) => {
     let contentInitObj = new NBCUniCPC.ContentInitializationObject();
     let callsignData = {};
-    const { params, cpc_config } = mediaItem;
+    const { params, cpc_config, requestor } = mediaItem;
 
     params.mvpdId = selectedMvpdId;
     if (callsign) {
@@ -78,6 +78,7 @@ const loadMediaItem = (mediaItem, callsign) => {
         });
     }
     contentInitObj.videoId = "LIVE";
+    windowObj.authRequestorId = requestor;
     NBCUniCPC.controller.updateLiveEvent("videoplayer", NBCUniCPC.Account[cpc_config], contentInitObj, params);
 
     dispatchUpdateMediaEVent(mediaItem, callsignData);
