@@ -1,5 +1,6 @@
 {
   "name": "oneapp-linear-harness",
+  "homepage": "https://edwardpkelly.github.io/oneapp-linear-demo/",
   "version": "1.0.0",
   "description": "Test harness for OneApp linear players.",
   "main": "app.js",
