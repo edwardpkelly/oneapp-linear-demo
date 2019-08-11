@@ -28,15 +28,3 @@ You must have a valid and current subscription from a TV provider in order to be
 2. Click 'Login'
 3. Enter your credentials and follow the prompts from your cable provider
 4. If your account is authorized you will now be able to view the live streams
-
-
-### Installation
-
-Clone the repo locally, then run:
-
-```sh
-$ cd oneapp-linear-demo
-$ npm install
-$ npm run dev
-```
-The app will open a browser window when the development server starts or you may open your own browser and point to `localhost:8080`.
