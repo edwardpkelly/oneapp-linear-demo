@@ -1,6 +1,7 @@
 # One App Linear (Live TV) Demo App
 
 **Live demo** is available for viewing here: https://edwardpkelly.github.io/oneapp-linear-demo/
+
 _**Note:**_ Due to security and the desire to protect the content streams, domain restriction prevents playback of all content on the link above. For a full, un-restricted live demo, follow this link: http://tve-dev.nbcuni.com/epkelly/9932/react/
 
 A single page application built with Bootstrap and React to test/demo the streaming of multi-channel (multi-brand) content all from one page (a.k.a OneApp Linear Experience).
