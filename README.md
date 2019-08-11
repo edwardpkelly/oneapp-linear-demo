@@ -23,7 +23,7 @@ A single page application built with Bootstrap and React to test/demo the stream
 
 ### Authentication (authN) / Authorization (authZ)
 
-You must have a valid and current subscription from a TV provider in order to be able to view this content. When you first view this page you will be instructed to login using the credentials provided by your cable television provider. 
+You must have a valid and current subscription from a TV provider in order to be able to view playback in the demo links above. When you first view the demo page you will be instructed to login using the credentials provided by your cable television provider. 
 1. Select your television provider from the dropdown menu in the header bar
 2. Click 'Login'
 3. Enter your credentials and follow the prompts from your cable provider
